@@ -1,0 +1,80 @@
+.bentopage{
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 19px;
+    width: 100%; /* 20% smaller */
+    justify-content: center;
+    align-items: center;
+    max-width: 768px;
+    margin: auto;
+}
+
+.rowflex {
+    display: flex;
+    flex-direction: row;
+    gap: 19px;
+    justify-content: center;
+}
+
+.colflex {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    align-items: center;
+}
+
+.mybox {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    /* background: url(./jigjig.png); Separate background image */
+    background-color: #f5f5f5;             /* Separate background color */
+    background-size: 100px 100px;         /* Separate background size */
+    background-repeat: repeat;             /* Explicitly set repeat (or no-repeat) */
+    background-position: 0% 0%;            /* Explicitly set position */
+    background-blend-mode: darken;             /* mix-blend-mode on the element itself */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+
+/* Adjusted fixed sizes */
+.onefirst { width: 318px; height: 77px; }
+.onesecond { width: 165px; height: 128px; }
+.onethird { width: 136px; height: 62px; }
+
+.kunalbento { width: 138px; height: 271px; background-color: #D9504E;}
+.ruhibento { width: 166px; height: 141px; background-color: #FFC83D;}
+.bhumikabento { width: 152px; height: 210px; background-color: #DA3FCC; }
+.harshitbento { width: 306px; height: 70px; background-color: #427DFF;}
+
+.twofirst { width: 140px; height: 77px; }
+.twosecond { width: 140px; height: 271px; }
+.twothird { width: 140px; height: 141px; }
+.twofourth { width: 140px; height: 141px; }
+
+.threefirst { width: 303px; height: 77px; }
+.threesecond { width: 303px; height: 117px; }
+.threethird { width: 145px; height: 142px; }
+.threefourth { width: 145px; height: 55px; }
+
+@media (max-width: 768px) {
+    .container {
+        width: 85%;
+        flex-direction: column;
+    }
+    .bentopage{
+        padding: 100px 0px;
+        width: 100vw;
+        height: auto;
+    }
+}

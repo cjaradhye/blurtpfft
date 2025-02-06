@@ -1,0 +1,121 @@
+body{
+    background-color: #062C30;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.rowflex{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.colflex{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* first */
+
+.onefirst{
+    width: 497px;
+    height: 120px;
+}
+.onesecond{
+    width: 257px;
+    height: 200px;
+}
+.onethird{
+    width: 212px;
+    height: 98px;
+}
+.kunalbento{
+    width: 215px;
+    height: 424px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url(../../public/jigjig.png) lightgray 0% 0% / 100px 100px repeat, #D9504E;
+    background-blend-mode: darken, normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.ruhibento{
+    width: 260px;
+    height: 220px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url(../../public/jigjig.png) lightgray 0% 0% / 100px 100px repeat, #FFC83D;
+    background-blend-mode: darken, normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.bhumikabento{
+    width: 237px;
+    height: 328px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url(../../public/jigjig.png) lightgray 0% 0% / 100px 100px repeat, #DA3FCC;
+    background-blend-mode: darken, normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.harshitbento{
+    width: 477px;
+    height: 110px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url(../../public/jigjig.png) lightgray 0% 0% / 100px 100px repeat, #427DFF;
+    background-blend-mode: darken, normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset; 
+}
+
+/* second */
+
+.twofirst{
+    width: 220px;
+    height: 120px;
+}
+.twosecond{
+    width: 220px;
+    height: 424px;
+}
+.twothird{
+    width: 220px;
+    height: 220px;
+}
+.twofourth{
+    width: 220px;
+    height: 220px;
+}
+
+
+/* third */
+
+.threefirst{
+    width: 474px;
+    height: 120px;
+}
+.threesecond{
+    width: 474px;
+    height: 183px;
+}
+.threethird{
+    width: 226px;
+    height: 221px;
+}
+.threefourth{
+    width: 226px;
+    height: 86px;
+}
+
+/* main box */
+
+.mybox{
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url(../../public/jigjig.png) lightgray 0% 0% / 100px 100px repeat, #F5F5F5;
+    background-blend-mode: darken, normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
