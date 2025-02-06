@@ -9,7 +9,7 @@ export default function EmailSignup() {
 
   const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const valid = isValidEmail(email);
 
     if (checked && valid) {
@@ -20,6 +20,21 @@ export default function EmailSignup() {
       setReaction({ img: "kunal.png", text: "I am so confused, could've sworn and made me feel happy, yk?" });
     } else {
       setReaction({ img: "harshit.png", text: "I respect the honesty." });
+    }
+
+
+    if (valid) {
+      try {
+        console.log("pleasepleaseplease");
+        await fetch("http://localhost:3000/email", {
+          
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+      } catch (error) {
+        console.error("Error saving email:", error);
+      }
     }
   };
 

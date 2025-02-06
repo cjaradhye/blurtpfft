@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("./config/passport"); // Passport setup
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -25,9 +26,11 @@ mongoose.connect(process.env.MONGOURL)
   .catch(err => console.error("Error connecting to MongoDB:", err));
 
 // Routes
+app.use(cors());
 app.use("/", require("./routes/indexRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/dashboard", require("./routes/dashboardRoutes"));
+app.use("/email", require("./routes/emailRoutes"));
 
 // Start Server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
