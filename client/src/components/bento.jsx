@@ -1,80 +1,108 @@
 // App.js
 import React from 'react';
-import './Bento.css'; // Import the CSS file
+import './Bento.css';
 
 const Bento = () => {
   return (
     <div className='bentopage'>
-        <div className="container">
-            <div className="mybigflex colflex">
-                <div className='onefirst mybox'>
-                </div>
-                <div className="rowflex">
-                    <div className='kunalbento mybox'>
-                    </div>
-                    <div className='colflex'>
-                        <div className="onesecond mybox">
-                        </div>
-                        <div className="onesecond mybox">
-                        </div>
-                    </div>
-                </div>
-                <div className='rowflex'>
-                    <div className='colflex'>
-                        <div className='onethird mybox'>
-                        </div>
-                        <div className='onethird mybox'>
-                        </div>
-                    </div>
-                    <div className='ruhibento mybox'>
-
-                    </div>
-                </div>
+      <div className='container'>
+        <div className='mybigflex colflex'>
+          <div className='onefirst mybox'>
+            <h2 className='bentoheading'>blurt what</h2>
+            <p className='bentotext'>simply, it is a weekly chaotic, unfiltered, and oddly insightful newsletter disguised as a group chat</p>
+          </div>
+          <div className='rowflex'>
+            <div className='kunalbento mybox'>
+              <h2 className='bentoheading'>Kunal</h2>
             </div>
-
-            <div className="mybigflex rowflex">
-                <div className='colflex'>
-                    <div className='twofirst mybox'>
-                    </div>
-                    <div className='twosecond mybox'>
-                    </div>
-                    <div className='twofourth mybox'>
-                    </div>
-                </div>
-                <div className='colflex'>
-                    <div className='bhumikabento mybox'>
-                    </div>
-                    <div className='twothird mybox'>
-                    </div>
-                    <div className='twofourth mybox'>
-                    </div>
-                </div>
-                
+            <div className='colflex'>
+              <div className='onesecond mybox'>
+                <h2 className='bentoheading'>blurt why</h2>
+                <p className='bentotext'>makes news personal, no doomscrolling, just <i>real impact</i> as you see characters you care about live through it</p>
+              </div>
+              <div className='onesecond mybox'>
+                <h2 className='bentoheading'>smart+stupid</h2>
+                <p className='bentotext'>one second it's deep analysis, the next, someone's yelling over who stole the remote</p>
+              </div>
             </div>
-
-            <div className='mybigflex colflex'>
-                <div className='colflex'>
-                    <div className='threefirst mybox'>
-                    </div>
-                    <div className='threesecond mybox'>
-                    </div>
-                    <div className='rowflex'>
-                        <div className='threethird mybox'>
-                        </div>
-                        <div className='threethird mybox'>
-                        </div>
-                    </div>
-                    <div className='harshitbento mybox'>
-                    </div>
-                    <div className='rowflex'>
-                        <div className='threefourth mybox'>
-                        </div>
-                        <div className='threefourth mybox'>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className='rowflex'>
+            <div className='colflex'>
+              <div className='onethird mybox'>
+                <h2 className='bentoheading'>news hits</h2>
+                <p className='bentotext'>the market crashed.</p>
+              </div>
+              <div className='onethird mybox'>
+                <p className='bentotext'>Harshit just lost half his savings but won’t admit he’s freaking out.</p>
+                <p className='bentotext'>Ruhi is spiraling about her startup.</p>
+                <p className='bentotext'>Kunal is pretending it doesn’t affect him.</p>
+                <p className='bentotext'>Bhumika...well she saw this coming.</p>
+              </div>
             </div>
+            <div className='ruhibento mybox'>
+              <h2 className='bentoheading'>Ruhi</h2>
+            </div>
+          </div>
         </div>
+
+        <div className='mybigflex rowflex'>
+          <div className='colflex'>
+            <div className='twofirst mybox'>
+              <h2 className='bentoheading'>#blurtsunday</h2>
+              <p className='bentotext'>every Sunday, you get a fresh, opinion-packed edition of blurt delivered straight to your mail</p>
+            </div>
+            <div className='twosecond mybox'>
+              <h2 className='bentoheading'>blurt how</h2>
+              <p className='bentotext'>news ➝ model ➝ proofread ➝ pdf ➝ mail</p>
+              <p className='bentotext'>from the world to your inbox—shaped, sharpened, and sent like a group chat that actually cares</p>
+            </div>
+            <div className='twofourth mybox'>
+              <h2 className='bentoheading'>personal, not passive</h2>
+              <p className='bentotext'>we react like real people, not journalists trying to sound neutral</p>
+            </div>
+          </div>
+          <div className='colflex'>
+            <div className='bhumikabento mybox'>
+              <h2 className='bentoheading'>Bhumika</h2>
+            </div>
+            <div className='twothird mybox'>
+              <h2 className='bentoheading'>built for convos</h2>
+              <p className='bentotext'>it's news you actually want to discuss, instead of just consuming and forgetting</p>
+            </div>
+            <div className='twofourth mybox'>
+              <h2 className='bentoheading'>no fluff, just chaos</h2>
+              <p className='bentotext'>the world is a mess. so are we.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className='mybigflex colflex'>
+          <div className='colflex'>
+            <div className='threefirst mybox'>
+              <h2 className='bentoheading'>no breaking news?</h2>
+              <p className='bentotext'>blurt will break them anyway</p>
+            </div>
+            <div className='threesecond mybox'>
+              <h2 className='bentoheading'>need?</h2>
+              <p className='bentotext'>nah</p>
+            </div>
+            <div className='rowflex'>
+              <div className='threethird mybox'></div>
+              <div className='threethird mybox'></div>
+            </div>
+            <div className='harshitbento mybox'>
+              <h2 className='bentoheading'>Harshit</h2>
+            </div>
+            <div className='rowflex'>
+              <div className='threefourth mybox'>
+                <h2 className='bentoheading'>it’s nice</h2>
+                <p className='bentotext'>(out of stuff sorry)</p>
+              </div>
+              <div className='threefourth mybox'></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

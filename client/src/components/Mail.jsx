@@ -13,11 +13,11 @@ export default function EmailSignup() {
     const valid = isValidEmail(email);
 
     if (checked && valid) {
-      setReaction({ img: "ruhi.png", text: "Awww... I see a bond forming" });
+      setReaction({ img: "ruhi.png", text: "awww... I see a bond forming" });
     } else if (checked && !valid) {
-      setReaction({ img: "bhumika.png", text: "Do you feel funny after doing that? Exactly why she left." });
+      setReaction({ img: "bhumika.png", text: "happy? feel funny? exactly why she left." });
     } else if (!checked && valid) {
-      setReaction({ img: "kunal.png", text: "I am so confused, could've sworn and made me feel happy, yk?" });
+      setReaction({ img: "kunal.png", text: "okay what? could've made me happy but NOPE" });
     } else {
       setReaction({ img: "harshit.png", text: "I respect the honesty." });
     }
@@ -60,7 +60,7 @@ export default function EmailSignup() {
         Submit
       </button>
 
-      {reaction && (
+      {/* {reaction && (
         <motion.div
           initial={{ x: 0, opacity: 0 }}
           animate={{ x: -100, opacity: 1 }}
@@ -70,6 +70,12 @@ export default function EmailSignup() {
           <img src={reaction.img} alt="Reaction" className="mailpic" />
           <p className="text-lg font-medium">{reaction.text}</p>
         </motion.div>
+      )} */}
+      {reaction && (
+        <div className="mailreaction">
+          <img src={reaction.img} alt="Reaction" className="mailpic" />
+          <p className="mailtext">{reaction.text}</p>
+        </div>
       )}
     </div>
   );

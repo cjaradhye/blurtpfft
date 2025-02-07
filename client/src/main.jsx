@@ -14,7 +14,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PseudoScroll />,
+    element: <><Navbar /><PseudoScroll /></>,
   },
   {
     path: "/mobile",
