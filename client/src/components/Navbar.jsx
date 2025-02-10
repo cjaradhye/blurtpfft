@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import blurtLogo from '../../public/blurt.png';
+import blurtLogo from './navbarlogo.png';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -33,6 +33,7 @@ const Navbar = () => {
         <div className='filler'></div>
         <a href="#overview">overview</a>
         <a href="#trial">trial</a>
+        <a href="#register">register</a>
         <a href="#contact">contact</a>
       </div>
     </div>

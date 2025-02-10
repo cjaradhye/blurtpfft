@@ -4,7 +4,7 @@
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 100px;
     height: 50px;
     background-color: #f5f5f5;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -18,19 +18,19 @@
 
 .navbar:hover,
 .navbar.expanded {
-    width: 400px;
+    width: 410px;
     background-color: #f5f5f5;
 }
 
 .navbar .logo {
-    width: 80px;
+    height: 30px;
 }
 .mylogo{
     transition: transform 0.5s ease;
     box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.24) inset;
     cursor: pointer;
     display: flex;
-    width: 150px;
+    width: 100px;
     height: 50px;
     border-radius: 40px;
     flex-direction: row;
@@ -52,7 +52,7 @@
     opacity: 0;
 }
 .filler{
-    width: 120px;
+    width: 70px;
 }
 
 .navbar:hover .additional-links,
@@ -75,7 +75,7 @@
 
 .navbar:hover .mylogo,
 .navbar.expanded .mylogo {
-    transform: translateX(-125px);
+    transform: translateX(-160px);
 }
 
 @media (max-width: 600px) {

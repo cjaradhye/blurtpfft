@@ -26,7 +26,7 @@ export default function EmailSignup() {
     if (valid) {
       try {
         console.log("pleasepleaseplease");
-        await fetch("http://localhost:3000/email", {
+        await fetch("https://blurtpfft.vercel.app/email", {
           
           method: "POST",
           headers: { "Content-Type": "application/json" },

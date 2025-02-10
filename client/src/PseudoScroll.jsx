@@ -7,37 +7,31 @@ import Third from "./components/Third";
 import Fourth from "./components/Fourth";
 import Mail from "./components/Mail";
 
-const messages = [
-  "Hey there!", "Second time!", "Third time!", "Fourth time!", "Fifth time!",
-  "Sixth time!", "Seventh time!", "Eighth time!", "Ninth time!", "Tenth time!",
-  "Out of thingies, this is a repetitive one"
-];
-
-const layers = ["First Layer", "Second Layer", "Third Layer", "Fourth Layer", "Fifth Layer"]; // Add more if needed
+const layers = ["First Layer", "Second Layer", "Third Layer", "Fourth Layer", "Fifth Layer"];
 
 const PseudoScroll = () => {
   const [currentLayer, setCurrentLayer] = useState(0);
-  const [maskCount, setMaskCount] = useState(0);
-  const [currentMessage, setCurrentMessage] = useState(messages[0]);
+  const [maskCount, setMaskCount] = useState(1);
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     const handleScroll = (event) => {
-      if (scrolling) return; // Prevent rapid scrolling
-
+      if (scrolling) return;
       const direction = event.deltaY > 0 ? 1 : -1;
       const nextLayer = currentLayer + direction;
-
+      
       if (nextLayer >= 0 && nextLayer < layers.length) {
         setScrolling(true);
-        setMaskCount((prev) => Math.min(prev + 1, messages.length - 1));
-        setCurrentMessage(messages[maskCount]);
+        setMaskCount((prev) => {
+          const newCount = prev < 24 ? prev + 1 : 24;
+          return newCount;
+        });
 
         gsap.to(".mask", {
           height: "100%",
           duration: 1,
           ease: "power2.inOut",
-          onStart: () => gsap.to(".mask-text", { opacity: 1, duration: 0.3 }),
+          onStart: () => gsap.to(".mask", { opacity: 1, duration: 0.3 }),
           onComplete: () => {
             setCurrentLayer(nextLayer);
             gsap.to(".layers-container", {
@@ -48,7 +42,7 @@ const PseudoScroll = () => {
               height: "0%",
               duration: 1,
               onComplete: () => {
-                gsap.to(".mask-text", { opacity: 0, duration: 0.3 });
+                gsap.to(".mask", { opacity: 0, duration: 0.3 });
                 setScrolling(false);
               },
             });
@@ -58,7 +52,6 @@ const PseudoScroll = () => {
     };
 
     window.addEventListener("wheel", handleScroll, { passive: true });
-
     return () => window.removeEventListener("wheel", handleScroll);
   }, [currentLayer, scrolling]);
 
@@ -74,8 +67,11 @@ const PseudoScroll = () => {
       </div>
 
       {/* Mask for Transition */}
-      <div className="mask">
-        <span className="mask-text">{currentMessage}</span>
+      <div className="mask" style={{
+        backgroundImage: `url(./loading/loading${maskCount}.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}>
       </div>
     </div>
   );
