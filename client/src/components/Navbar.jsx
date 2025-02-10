@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import blurtLogo from './navbarlogo.png';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -26,7 +25,7 @@ const Navbar = () => {
       onMouseLeave={handleMouseLeave}
     >
       <div className='mylogo' onClick={handleLogoClick}>
-        <img src={blurtLogo} alt="Blurt Logo" className="logo"  />
+        <img src="./navbarlogo.png" alt="Blurt Logo" className="logo"  />
       </div>
       
       <div className="additional-links">
