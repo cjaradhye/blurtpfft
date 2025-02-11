@@ -40,6 +40,7 @@ const Bento = () => {
 
             </div>
             <div className='ruhibento mybox'>
+              <img src='./bento/ruhi.png' className='ruhipic'></img>
               <h2 className='bentoheading'>Ruhi</h2>
             </div>
           </div>
@@ -70,6 +71,7 @@ const Bento = () => {
           </div>
           <div className='colflex'>
             <div className='bhumikabento mybox'>
+              <img src='./bento/bhumika.png' className='bhumikapic'></img>
               <h2 className='bentoheading'>Bhumika</h2>
             </div>
             <div className='twothird mybox'>
@@ -79,6 +81,9 @@ const Bento = () => {
             </div>
             <div className='twofourth mybox'>
               <h2 className='bentoheading'>breaking point</h2>
+              <div className='innergraph'>
+                <img className="graph" src='./bento/graph.png'></img>
+              </div>
               
             </div>
           </div>
@@ -93,8 +98,16 @@ const Bento = () => {
             <div className='threesecond mybox'>
               
               <h2 className='bentoheading'>blurt how</h2>
-              <div className='twosecond'>
-                <p className='threeinner bentotext'>news ➝ model ➝ proofread ➝ pdf ➝ mail</p>
+              <div className='threeinner'>
+                <p className='innertext'>news 
+                  <img src='./bento/arrow.png' className='arrow'></img>
+                  model 
+                  <img src='./bento/arrow.png' className='arrow'></img>
+                  proofread 
+                  <img src='./bento/arrow.png' className='arrow'></img>
+                  pdf 
+                  <img src='./bento/arrow.png' className='arrow'></img>
+                  mail</p>
               </div> 
               <p className='bentotext'>from the world to your inbox—shaped, sharpened, and sent like a group chat that actually cares</p>
             </div>
@@ -109,6 +122,7 @@ const Bento = () => {
               </div>
             </div>
             <div className='harshitbento mybox'>
+              <img src='./bento/harshit.png' className='harshitpic'></img>
               <h2 className='bentoheading'>Harshit</h2>
             </div>
             <div className='rowflex'>
