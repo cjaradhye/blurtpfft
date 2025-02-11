@@ -43,7 +43,7 @@
     align-items: center;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.14);
-    background: url(./bgs/white.png);
+    background: url("/bgs/white.png");
     /* background-color: #f5f5f5;             Separate background color */
     background-size: 100px 100px;         /* Separate background size */
     background-repeat: repeat;             /* Explicitly set repeat (or no-repeat) */
@@ -88,7 +88,7 @@
     padding: 0px;
     width: 166px; 
     height: 324.286px; 
-    background: url("./bgs/red.png");
+    background: url("/bgs/red.png");
 }
 .kunalpic{
     z-index: 1;
@@ -112,7 +112,7 @@
     align-items: center;
     width: 166px; 
     height: 153.143px; 
-    background: url("./bgs/yellow.png");
+    background: url("/bgs/yellow.png");
     display: block;
     position: relative;
     overflow: hidden;
@@ -141,7 +141,7 @@
     text-align: center;
     width: 166px; 
     height: 264.74px; 
-    background: url("./bgs/pink.png"); 
+    background: url("/bgs/pink.png"); 
     padding: 0px;
     display: block;
     position: relative;
@@ -168,7 +168,7 @@
 .harshitbento { 
     width: 350px; 
     height: 67.572px; 
-    background: url("./bgs/blue.png");
+    background: url("/bgs/blue.png");
     display: block;
     position: relative;
     overflow: hidden;
@@ -215,8 +215,6 @@
         height: auto;
     }
 }
-
-
 
 .onethirdinside{
     display: flex;
