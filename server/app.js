@@ -5,6 +5,8 @@ const session = require("express-session");
 const passport = require("./config/passport"); // Passport setup
 const cors = require("cors");
 require("dotenv").config();
+const app = express();
+const PORT = 3000;
 
 app.use(
   cors({
@@ -21,8 +23,7 @@ app.use(
   })
 );
 
-const app = express();
-const PORT = 3000;
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
