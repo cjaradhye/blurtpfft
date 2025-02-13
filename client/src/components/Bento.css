@@ -35,6 +35,7 @@
 }
 
 .mybox {
+    text-align: center;
     padding: 10px;
     display: flex;
     gap: 10px;
@@ -52,6 +53,24 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
+.myewbox{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: url("/bgs/white.png");
+    /* background-color: #f5f5f5;             Separate background color */
+    background-size: 100px 100px;         /* Separate background size */
+    background-repeat: repeat;             /* Explicitly set repeat (or no-repeat) */
+    background-position: 0% 0%;            /* Explicitly set position */
+    background-blend-mode: darken;             /* mix-blend-mode on the element itself */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset; 
+}
+
 .bentoheading{
     margin: 0px;
     color: #1a1a1a;
@@ -61,6 +80,10 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.5px;
+    transition: transform 0.5s;
+}
+.bentoheading:hover{
+    transform: translateX(-1px);
 }
 
 .bentotext{
@@ -103,7 +126,7 @@
     position: absolute;
     top: 20px;
     left: 15px;
-    transition: all 0.5s ease;;
+    transition: all 0.5s ease;
 }
 .kunalbento .bentoheading:hover{
     transform: scale(1.1);

@@ -12,7 +12,7 @@ const Bento = () => {
             <p className='bentotext'>simply, it is a weekly chaotic, unfiltered, and oddly insightful newsletter disguised as a group chat</p>
           </div>
           <div className='rowflex'>
-            <div className='kunalbento mybox'>
+            <div className='kunalbento myewbox'>
               <img src='./bento/kunal.png' className='kunalpic'></img>
               <h2 className='bentoheading'>Kunal</h2>
             </div>
@@ -39,7 +39,7 @@ const Bento = () => {
               </div>
 
             </div>
-            <div className='ruhibento mybox'>
+            <div className='ruhibento myewbox'>
               <img src='./bento/ruhi.png' className='ruhipic'></img>
               <h2 className='bentoheading'>Ruhi</h2>
             </div>
@@ -121,7 +121,7 @@ const Bento = () => {
                 <p className='bentotext'>the world is a mess. so are we.</p>
               </div>
             </div>
-            <div className='harshitbento mybox'>
+            <div className='harshitbento myewbox'>
               <img src='./bento/harshit.png' className='harshitpic'></img>
               <h2 className='bentoheading'>Harshit</h2>
             </div>
