@@ -8,43 +8,18 @@ require("dotenv").config();
 const app = express();
 const PORT = 3000;
 
-// app.use((req, res, next) => {
-//   const allowedOrigins = [
-//     "https://www.nahneedpfft.com",
-//     "http://localhost:5173"
-//   ];
-//   const origin = req.headers.origin;
-
-//   if (allowedOrigins.includes(origin)) {
-//     res.setHeader("Access-Control-Allow-Origin", origin);
-//   }
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, Accept, Origin");
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-
-//   if (req.method === "OPTIONS") {
-//     return res.status(204).end();
-//   }
-
-//   next();
-// });
-
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:5173",
-//       "https://nahneedpfft.com"
-//     ], // Allowed origins
-//     credentials: true, // Allows the server to accept cookies or other credentials
-//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
-//     allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"], // Allowed headers
-//     preflightContinue: false, // Pass the CORS preflight response to the next handler
-//     optionsSuccessStatus: 204, // Status code for successful OPTIONS requests
-//   })
-// );
-
-
-
+// CORS Middleware (Move it here, before routes)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://nahneedpfft.com"
+    ], 
+    credentials: true, 
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"],
+  })
+);
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -62,12 +37,20 @@ mongoose.connect(process.env.MONGOURL)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Error connecting to MongoDB:", err));
 
-// Routes
-app.use(cors());
+// Routes (After CORS)
 app.use("/", require("./routes/indexRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/dashboard", require("./routes/dashboardRoutes"));
 app.use("/email", require("./routes/emailRoutes"));
+
+// Handle Preflight Requests (Fixes OPTIONS request failures)
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", req.headers.origin);
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, Accept, Origin");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.sendStatus(204);
+});
 
 // Start Server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

@@ -14,7 +14,6 @@ const App = () => (
         path="/blurt"
         element={
           <>
-            <Navbar />
             <PseudoScroll />
             <ResponsiveRedirect /> {/* It must be inside a route */}
           </>
