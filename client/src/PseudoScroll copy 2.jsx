@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import Bento from "./components/bento";
+import Bento from './components/bento';
 import "./PseudoScroll.css";
 import First from "./components/First";
 import Third from "./components/Third";
 import Fourth from "./components/Fourth";
 import Mail from "./components/Mail";
-import Navbar from "./components/Navbar"; // Add Navbar here
 
 const layers = ["First Layer", "Second Layer", "Third Layer", "Fourth Layer"];
 
@@ -20,10 +19,13 @@ const PseudoScroll = () => {
       if (scrolling) return;
       const direction = event.deltaY > 0 ? 1 : -1;
       const nextLayer = currentLayer + direction;
-
+      
       if (nextLayer >= 0 && nextLayer < layers.length) {
         setScrolling(true);
-        setMaskCount((prev) => (prev < 24 ? prev + 1 : 24));
+        setMaskCount((prev) => {
+          const newCount = prev < 24 ? prev + 1 : 24;
+          return newCount;
+        });
 
         gsap.to(".mask", {
           height: "100%",
@@ -55,9 +57,6 @@ const PseudoScroll = () => {
 
   return (
     <div className="container-wrapper">
-      {/* Add Navbar Here */}
-      <Navbar setCurrentLayer={setCurrentLayer} />
-
       {/* All Layers (Properly Positioned) */}
       <div className="layers-container">
         <First />
@@ -67,16 +66,14 @@ const PseudoScroll = () => {
       </div>
 
       {/* Mask for Transition */}
-      <div
-        className="mask"
-        style={{
-          backgroundImage: `url(./loading/loading${maskCount}.png)`,
-          backgroundSize: "cover",
-          overflow: "hidden",
-          objectFit: "contain",
-          backgroundPosition: "center",
-        }}
-      ></div>
+      <div className="mask" style={{
+        backgroundImage: `url(./loading/loading${maskCount}.png)`,
+        backgroundSize: "cover",
+        overflow: "hidden",
+        objectFit: "contain",
+        backgroundPosition: "center"
+      }}>
+      </div>
     </div>
   );
 };

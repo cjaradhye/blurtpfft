@@ -52,7 +52,7 @@ export default function EmailSignup() {
         <input className="mailcheck" type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
         <p>I solemnly swear that I am typing an email address</p>
       </label>
-      <p className="mailfour">(please I didn't have the time to add the email checker)</p>
+      <p className="mailfour">regex is a pain</p>
       <button
         onClick={handleSubmit}
         className="mailbutton"

@@ -92,8 +92,8 @@ const Bento = () => {
         <div className='mybigflex colflex'>
           <div className='colflex'>
             <div className='threefirst mybox'>
-              <h2 className='bentoheading'>#blurtsunday</h2>
-              <p className='bentotext'>every Sunday, you get a fresh, opinion-packed edition of blurt delivered straight to your mail</p>
+              <h2 className='bentoheading'>#blurtmonday</h2>
+              <p className='bentotext'>every monday, you get a fresh, opinion-packed edition of blurt delivered straight to your mail</p>
             </div>
             <div className='threesecond mybox'>
               
@@ -126,11 +126,11 @@ const Bento = () => {
               <h2 className='bentoheading'>Harshit</h2>
             </div>
             <div className='rowflex'>
-              <div className='threefourth mybox'>
+              <div className='threefourthone mybox'>
                 <h2 className='bentoheading'>need?</h2>
-                <p className='bentotext'>nah</p>
+                <p className='nah bentotext'>nah</p>
               </div>
-              <div className='threefourth mybox'>
+              <div className='threefourthtwo mybox'>
                 <h2 className='bentoheading'>real-time</h2>
                 <p className='bentotext'>experience news as it unfolds</p>
               </div>

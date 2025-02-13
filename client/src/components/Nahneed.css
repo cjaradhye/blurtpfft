@@ -1,0 +1,16 @@
+.fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Druk Wide Bold', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+}
+
+@media(max-width:780px){
+    .fullscreen-container{
+        font-size: 2rem;
+    }
+}

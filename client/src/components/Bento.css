@@ -202,7 +202,16 @@
 .threefirst { width: 330px; height: 66.572px; }
 .threesecond { width: 330px; height: 133.143px; }
 .threethird { width: 146px; height: 133.14px; }
-.threefourth { width: 145px; height: 47.572px; }
+.threefourthone { 
+    background: url("/bgs/nahneed.png");
+    width: 145px; height: 47.572px; 
+}
+.threefourthtwo { 
+    width: 145px; height: 47.572px; 
+}
+.nah{
+    color: #95389E;
+}
 
 @media (max-width: 768px) {
     .container {
