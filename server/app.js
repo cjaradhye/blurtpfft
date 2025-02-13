@@ -8,12 +8,32 @@ require("dotenv").config();
 const app = express();
 const PORT = 3000;
 
+// app.use((req, res, next) => {
+//   const allowedOrigins = [
+//     "https://www.nahneedpfft.com",
+//     "http://localhost:5173"
+//   ];
+//   const origin = req.headers.origin;
+
+//   if (allowedOrigins.includes(origin)) {
+//     res.setHeader("Access-Control-Allow-Origin", origin);
+//   }
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, Accept, Origin");
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+
+//   if (req.method === "OPTIONS") {
+//     return res.status(204).end();
+//   }
+
+//   next();
+// });
+
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
-      "https://istevit.in",
-      "https://istevit.vercel.app",
+      "http://localhost:5173",
+      "https://nahneedpfft.com"
     ], // Allowed origins
     credentials: true, // Allows the server to accept cookies or other credentials
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
@@ -22,6 +42,7 @@ app.use(
     optionsSuccessStatus: 204, // Status code for successful OPTIONS requests
   })
 );
+
 
 
 

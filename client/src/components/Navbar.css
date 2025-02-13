@@ -4,14 +4,14 @@ body{
 
 @font-face {
     font-family: 'Druk Wide Bold';
-    src: url('./fonts/big.ttf') format('truetype');
+    src: url('/fonts/big.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
 @font-face {
     font-family: 'Graphik Trial';
-    src: url('./fonts/small.otf') format('opentype');
+    src: url('/fonts/small.otf') format('opentype');
 
     font-weight: normal;
     font-style: normal;
