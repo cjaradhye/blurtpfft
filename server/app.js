@@ -9,19 +9,19 @@ const app = express();
 const PORT = 3000;
 
 app.use(
-  cors({
-    origin: [
-      "https://www.nahneedpfft.com",
-      "http://localhost:5173"
-    ], // Allowed origins
-    credentials: true, // Required for cookies or authentication
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"], // Allowed headers
-    optionsSuccessStatus: 204, // Prevents preflight issues
-  })
+  cors()
 );
 
-
+// {
+//   origin: [
+//     "https://www.nahneedpfft.com",
+//     "http://localhost:5173"
+//   ], // Allowed origins
+//   credentials: true, // Required for cookies or authentication
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed methods
+//   allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"], // Allowed headers
+//   optionsSuccessStatus: 204, // Prevents preflight issues
+// }
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
