@@ -7,19 +7,21 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const PORT = 3000;
+const cors = require("cors");
 
-// CORS Middleware (Move it here, before routes)
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://nahneedpfft.com"
-    ], 
-    credentials: true, 
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"],
+      "https://www.nahneedpfft.com",
+      "http://localhost:5173"
+    ], // Allowed origins
+    credentials: true, // Required for cookies or authentication
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin"], // Allowed headers
+    optionsSuccessStatus: 204, // Prevents preflight issues
   })
 );
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
