@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Mobile from "./components/Mobile";
 import ResponsiveRedirect from "./ResponsiveRedirect"; // Import
 import FullScreenNahneed from "./components/Nahneed";
+import "./fonts.css";
 
 const App = () => (
   <BrowserRouter>

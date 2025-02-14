@@ -1,16 +1,48 @@
-.fullscreen-container {
+.nahneedcontainer {
+    background-color: #100303;
     width: 100vw;
     height: 100vh;
+    color: #95389E;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Druk Wide Bold', sans-serif;
-    font-size: 5rem;
+    font-family: "Right Grotesk";
+    font-size: 2.5rem;
     text-align: center;
 }
 
 @media(max-width:780px){
     .fullscreen-container{
-        font-size: 2rem;
+        font-size: 1rem;
     }
+}
+
+.nahneedmainlogo{
+    color: #F7F7F7;;
+}
+
+.pfft{
+    color: #95389E;
+}
+
+.mainlink{
+    text-decoration: none;
+    color: #F7F7F7;
+    font-size: 1rem;
+}
+
+.mainlink:hover{
+    color: #43D8C9;
+}
+
+.ew{
+    color: #f7f7f7;
+    position: relative;
+    bottom: 20px;
+    margin: 0px 10px;
+}
+
+.ew:hover{
+    color: #43D8C9;
 }
