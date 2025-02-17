@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Mobile from "./components/Mobile";
 import ResponsiveRedirect from "./ResponsiveRedirect"; // Import
 import FullScreenNahneed from "./components/Nahneed";
+import Unsubscribe from "./components/Unsubscribe";
+import Feedback from "./components/Feedback";
 import "./fonts.css";
 
 const App = () => (
@@ -34,6 +36,22 @@ const App = () => (
         element={
           <>
             <FullScreenNahneed />
+          </>
+        }
+      />
+      <Route
+        path="/feedback"
+        element={
+          <>
+            <Feedback />
+          </>
+        }
+      />
+      <Route
+        path="/unsubscribe"
+        element={
+          <>
+            <Unsubscribe />
           </>
         }
       />

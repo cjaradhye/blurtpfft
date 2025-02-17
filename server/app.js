@@ -110,6 +110,9 @@ app.use("/", require("./routes/indexRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/dashboard", require("./routes/dashboardRoutes"));
 app.use("/email", require("./routes/emailRoutes"));
+app.use("/feedback", require("./routes/feedbackRoutes"));
+app.use("/unsubscribe", require("./routes/unsubscribeRoutes"));
+
 
 // ✅ Server Start
 app.listen(PORT, () => console.log(`🚀 Server is running on port ${PORT}`));
