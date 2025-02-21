@@ -23,18 +23,30 @@
     align-items: center;
     text-align: center;
     background-color: #1a1a1a;
-    color: #f5f5f5;
+    color: #757575;
     font-size: 70px;
-    font-family: "Druk Wide Bold";
+    font-weight: 700;
+    justify-content: center;
+    /* font-family: "Druk Wide Bold"; */
+    font-family: "Product Sans";
     height: 150px;
-    width: 1000px;
+    width: 650px;
+}
+
+.mailtwo:hover{
+    color: #f5f5f5;
+}
+
+.mailtwo:active{
+    background-color: #f5f5f5;
+    color: #1a1a1a;
 }
 
 .mailfour{
     font-family: "Graphik Trial";
     font-size: 17px;
-    margin: -50px;
     font-weight: 400;
+    margin: -50px;
     color: #1a1a1a;
     text-align: center
 }

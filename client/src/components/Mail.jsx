@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import "./Mail.css";
+import "./styles/Mail.css";
 
 export default function EmailSignup() {
   const [email, setEmail] = useState("");

@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import './Bento.css';
+import './styles/Bento.css';
 
 const Bento = () => {
   return (

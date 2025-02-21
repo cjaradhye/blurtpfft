@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "./styles/Navbar.css";
 import { gsap } from "gsap";
 
 const Navbar = ({ setCurrentLayer }) => {

@@ -9,6 +9,9 @@ import FullScreenNahneed from "./components/Nahneed";
 import Unsubscribe from "./components/Unsubscribe";
 import Feedback from "./components/Feedback";
 import "./fonts.css";
+import Chat from "./components/blurts/Chat";
+import AfterLogin from "./components/blurts/AfterLogin";
+import PrivateRoute from "./components/Protected";
 
 const App = () => (
   <BrowserRouter>
@@ -53,6 +56,22 @@ const App = () => (
           <>
             <Unsubscribe />
           </>
+        }
+      />
+      <Route
+        path="/blurt/thefirst"
+        element={
+          <div className="chatthingy">
+            <Chat />
+          </div>
+        }
+      />
+      <Route
+        path="/trying"
+        element={
+            <PrivateRoute>
+            <AfterLogin />
+            </PrivateRoute>
         }
       />
     </Routes>

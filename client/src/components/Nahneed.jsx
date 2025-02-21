@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Nahneed.css";
+import "./styles/Nahneed.css";
 import "font-awesome/css/font-awesome.min.css";
 
 const FullScreenNahneed = () => {

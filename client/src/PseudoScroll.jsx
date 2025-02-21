@@ -7,6 +7,7 @@ import Third from "./components/Third";
 import Fourth from "./components/Fourth";
 import Mail from "./components/Mail";
 import Navbar from "./components/Navbar"; // Add Navbar here
+import Google from "./components/Google";
 
 const layers = ["First Layer", "Second Layer", "Third Layer", "Fourth Layer"];
 
@@ -62,7 +63,8 @@ const PseudoScroll = () => {
       <div className="layers-container">
         <First />
         <Bento />
-        <Mail />
+        {/* <Mail /> */}
+        <Google />
         <Fourth />
       </div>
 

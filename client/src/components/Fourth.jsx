@@ -1,6 +1,6 @@
 import React from "react";
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
-import "./Fourth.css";
+import "./styles/Fourth.css";
 
 function Fourth() {
     return (

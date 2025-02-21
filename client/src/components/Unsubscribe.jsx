@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Extra.css";
+import "./styles/Extra.css";
 
 const Unsubscribe = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ const Unsubscribe = () => {
       <h2 className="mailone">unsubscribe?</h2>
       <form onSubmit={handleUnsubscribe}>
         <input
-            className="mailtwo"
+            className="mailtwoextra"
           type="email"
           placeholder="email"
           value={email}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Third.css";
+import "./styles/Third.css";
 
 function Third() {
     return (

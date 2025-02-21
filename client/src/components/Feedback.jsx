@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Extra.css";
+import "./styles/Extra.css";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState({ positive: "", negative: "" });
@@ -21,7 +21,7 @@ const Feedback = () => {
       <h2 className="mailone">feedback</h2>
       <form className="hmm" onSubmit={handleFeedbackSubmit}>
         <input
-            className="mailtwo"
+            className="mailtwoextra"
           type="text"
           placeholder="positives?"
           value={feedback.positive}
