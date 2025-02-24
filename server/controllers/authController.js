@@ -8,7 +8,7 @@ exports.googleCallback = async (req, res) => {
       expiresIn: "7d",
     });
 
-    res.redirect(`http://localhost:5173/blurt?token=${token}`);
+    res.redirect(`https://nahneedpfft.com/blurt?token=${token}`);
   } catch (error) {
     res.redirect("/login");
   }
