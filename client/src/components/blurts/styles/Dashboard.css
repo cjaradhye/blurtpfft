@@ -1,0 +1,187 @@
+
+
+.blurt-main {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.blurt-dashboard{
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo-button {
+  width: 70px;
+}
+
+/* .blurtbutton {
+  top: 50px;
+  transition: all 0.25s ease-in-out;
+  border: 5px solid #F5F5F5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  height: 40px;
+  width: 120px;
+  border-radius: 40px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.people{
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.kunalbox{
+  background: url('/mainpage/morning/kunal.png');
+}
+.ruhibox{
+  background: url('/mainpage/morning/ruhi.png');
+}
+.harshitbox{
+  background: url('/mainpage/morning/harshit.png');
+}
+.bhumikabox{
+  background: url('/mainpage/morning/bhumika.png');
+}
+
+.dashbox{
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  /* background-color: antiquewhite; */
+  height: 340px;
+  width: 47vw;
+  max-width: 600px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25) inset;
+}
+
+.blurtbutton:hover{
+  background-color: #ffffffae;
+}
+
+.blurt-item{
+  background-repeat: repeat;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1210px;
+  width: calc(10px + 94vw);
+  height: 150px;
+  gap: 10px;
+}
+
+.blurt-heading{
+  font-family: "Druk Wide Bold";
+  font-size: 50px;
+  color: #f5f5f5;
+}
+
+.blurt-date{
+  font-family: "Graphik Trial";
+  font-size: 20px;
+  color: #f5f5f5;
+}
+
+.blurts{
+  min-height: 70vh;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+}
+
+.blurt-header {
+  display: flex;
+  position: fixed;
+  top: 50px;
+  width: calc(10px + 94vw);
+  max-width: 1210px;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between; /* Keeps Blurt button centered and DP at the edge */
+  padding: 0 20px;
+}
+.blurtbutton-container {
+  margin-right: -50px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Ensures button stays in the center */
+}
+
+.blurtbutton {
+  transition: all 0.25s ease-in-out;
+  border: 5px solid #F5F5F5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  height: 40px;
+  width: 120px;
+  border-radius: 40px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-button {
+  width: 70px;
+}
+
+@media (max-width: 768px) {
+  .blurtbutton{
+    top: 25px;
+  }
+  .blurt-item{
+    width: 90vw;
+  }
+  .blurt-main{
+    display: block;
+  }
+  .people{
+    flex-direction: column;
+  }
+  .dashbox{
+    width: 90vw;
+    height: calc(25vh - 100px);
+    min-height: 210px;
+  }
+  .blurt-header{
+    top: 10px;
+  }
+  .dp-button{
+    margin-right: 25px;
+  }
+  .blurt-heading{
+    font-size: 25px;
+  }
+  .blurt-date{
+    font-size: 10px;
+  }
+  .filler{
+    height: 80px;
+  }
+}
+
+/* .blurt-header{
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  max-width: 1210px;
+  width: 80vw;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+
+

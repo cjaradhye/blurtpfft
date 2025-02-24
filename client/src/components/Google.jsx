@@ -12,12 +12,12 @@ export default function Google() {
       localStorage.setItem("authToken", token);
       window.history.replaceState(null, "", window.location.pathname);
   
-      fetch("http://localhost:3000/auth/google/user", {
+      fetch("https://blurtpfft.vercel.app/auth/google/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
         .then((userData) => {
-          // console.log(userData);
+          console.log(userData);
           if (userData.name) {  // Fix: Check 'name' instead of 'googleId'
             localStorage.setItem("user", JSON.stringify(userData));
             navigate("/trying");

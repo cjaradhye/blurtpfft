@@ -2,34 +2,25 @@ const User = require("../models/user");
 
 // Save or update user data
 exports.saveUserData = async (req, res) => {
-  console.log("suwjfv");
   console.log(req.body);
-  const { googleId, name, nickname, color, mode } = req.body;
-  console.log(googleId);
+  const { googleId, name, nickname, color, mode, settings } = req.body;
 
   if (!googleId) {
     return res.status(400).json({ error: "Google ID is required" });
   }
 
   try {
-    let user = await User.findOne({ googleId: googleId });
-    console.log("User found:", user);
+    // Use `findOneAndUpdate` to update in one step
+    let user = await User.findOneAndUpdate(
+      { googleId }, // Find by Google ID
+      { $set: { nickname, color, mode, settings } }, // Update fields
+      { new: true, upsert: true, runValidators: true } // Return updated doc, create if not found, enforce schema validation
+    );
 
-    if (user) {
-      // Update existing user
-      console.log("heretoo");
-      user.nickname = nickname;
-      user.color = color;
-      user.mode = mode;
-    } else {
-      // Create new user
-      user = new User({ googleId, name, nickname, color, mode });
-    }
-
-    await user.save();
+    console.log("Updated User:", user);
     res.status(200).json({ message: "User data saved", user });
   } catch (error) {
-    console.error(error);
+    console.error("Error saving user:", error);
     res.status(500).json({ error: "Server error" });
   }
 };
@@ -51,7 +42,7 @@ exports.getUserData = async (req, res) => {
 
     res.status(200).json(user);
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching user:", error);
     res.status(500).json({ error: "Server error" });
   }
 };

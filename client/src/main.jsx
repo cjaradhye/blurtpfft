@@ -12,6 +12,13 @@ import "./fonts.css";
 import Chat from "./components/blurts/Chat";
 import AfterLogin from "./components/blurts/AfterLogin";
 import PrivateRoute from "./components/Protected";
+import Dashboard from "./components/blurts/Dashboard";
+import Settings from "./components/blurts/Settings";
+import EditAvatar from "./components/blurts/EditAvatar";
+import ToImage from "./components/image-converter/ToImage";
+import Style from "./components/image-converter/Style";
+import DownloadButton from "./components/image-converter/Download";
+
 
 const App = () => (
   <BrowserRouter>
@@ -74,9 +81,44 @@ const App = () => (
             </PrivateRoute>
         }
       />
-    </Routes>
+      <Route
+        path="/blurt/main"
+        element={
+            <Dashboard />
+        }
+      />
+      <Route
+        path="/settings"
+        element={
+            <Settings />
+        }
+      />
+      <Route
+          path="/blurt/edit-avatar"
+          element={
+              <EditAvatar />
+          }
+        />
+        <Route
+          path="/blurt/image"
+          element={
+              <ToImage />
+          }
+        />
+        <Route
+          path="/style"
+          element={
+            <div>
+                <DownloadButton />
+                <Style />
+            </div>
+          }
+        />
+      </Routes>
   </BrowserRouter>
 );
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);

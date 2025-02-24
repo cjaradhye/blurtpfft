@@ -7,70 +7,32 @@ import "./styles/AfterLogin.css";
 import IntroDp from "./IntroDp";
 
 
-function AfterLogin() {
+function EditAvatar() {
   const [step, setStep] = useState(1);
   const [hexcodeChosen, setHexcodeChosen] = useState({ h: 0, s: 0, v: 0, a: 1 });
   const [mode, setMode] = useState(false); // Boolean: false = Dark, true = Light
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState(name);
-  const [userId, setUserId] = useState("");
-  const [settings, setSettings] = useState("");
+  const [googleId, setGoogleId] = useState("");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  
   useEffect(() => {
-    const fetchUserData = async (id) => {
-      try {
-        console.log("Fetching user data for:", id);
-        const response = await fetch(`https://blurtpfft.vercel.app/users/${id}`);
-        if (response.ok) {
-          
-          const userData = await response.json();
-          console.log("User Data:", userData);
-          localStorage.setItem("user", JSON.stringify(userData));
-          setHexcodeChosen(userData.color || "#FFD700");
-          setMode(userData.mode ?? false);
-          setName(userData.name || "");
-          setNickname(userData.nickname || "");
-          setSettings(userData.settings || {});
-          if (userData.nickname!=""){
-            console.log(userData);
-            navigate("/blurt/main");
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    const user = JSON.parse(localStorage.getItem("user"));
     console.log("User: ", user);
-    if (user && user.googleId) {
-      setUserId(user.googleId);
-      console.log(user.googleId);
-      fetchUserData(user.googleId);
+    if (user && user._id) {
+      setGoogleId(user.googleId);
+      setLoading(false);
     } else {
       console.warn("No user found in localStorage!");
       setLoading(false);
     }
   }, []);
 
-
   const handleSubmit = async () => {
-    if (!userId) {
-      alert("User ID missing. Try logging in again.");
-      return;
-    }
-
-    if (!name.trim() || !nickname.trim()) {
-      alert("Please enter both a name and a nickname.");
-      return;
-    }
 
     try {
-      const stuff = { googleId: userId, name, nickname, color: hsvaToHex(hexcodeChosen), mode, settings: settings };
+      const stuff = { googleId: googleId, name, nickname, color: hsvaToHex(hexcodeChosen), mode };
       console.log(stuff);
       const response = await fetch("https://blurtpfft.vercel.app/users/save", {
         method: "POST",
@@ -81,7 +43,10 @@ function AfterLogin() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      localStorage.setItem("user", JSON.stringify(stuff));
+      user.nickname = nickname;
+      user.color = hsvaToHex(hexcodeChosen);
+      user.mode = mode;
+      localStorage.setItem("user", JSON.stringify(user));
       navigate("/blurt/main");
     } catch (error) {
       console.error("Error saving user data:", error);
@@ -99,7 +64,7 @@ function AfterLogin() {
         color: mode ? "#1a1a1a" : "#f5f5f5",
       }}
     >
-      {userId && step === 1 && (
+      {googleId && step === 1 && (
         <div className="stepone">
           {/* <label className="afterone"></label> */}
           
@@ -132,7 +97,7 @@ function AfterLogin() {
         </div>
       )}
 
-      {userId && step === 2 && (
+      {googleId && step === 2 && (
         <div className="step2">
           <div className="chat-container-intro">
             <div className={`message-group left`}>
@@ -182,7 +147,7 @@ function AfterLogin() {
               </div>
               <div className="message-box" style={{ background: mode ? "#1A1A1A" : "#F5F5F5" , color: mode? "#f5f5f5" : "#1a1a1a"}}>
                 oh. so sorry, it's 
-                <input className="intro-input" type="text" onChange={(e) => setNickname(e.target.value)}></input>
+                <input value={nickname} className="intro-input" type="text" onChange={(e) => setNickname(e.target.value)}></input>
               </div>
             </div>
           </div>
@@ -217,4 +182,4 @@ function AfterLogin() {
   );
 }
 
-export default AfterLogin;
+export default EditAvatar;

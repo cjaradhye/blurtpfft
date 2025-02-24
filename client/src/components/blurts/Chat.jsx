@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./styles/Chat.css";
 import messages from './jsons/sample_chat.json';
 
-
-const userState = {
-  user_id : "67b73da2bc45eca3079056be",
-  blurt_id: "thefirst"
-}
+// const userState = {
+//   user_id : "67b73da2bc45eca3079056be",
+//   blurt_id: "thefirst"
+// }
 const getColorForSender = (sender) => {
   const colors = {
     Kunal: "#FF5E5B",
@@ -25,7 +25,9 @@ const formatMessage = (text) => {
 };
 
 const Chat = () => {
-  const { user_id, blurt_id } = userState; 
+  const location = useLocation();
+  const comps = location.state;
+  const { user_id, blurt_id } = comps; 
   const [tapTalk, setTapTalk] = useState(true);
   const [autoTalk, setAutoTalk] = useState(true);
   const [intervalTime, setIntervalTime] = useState(1000);
@@ -35,12 +37,22 @@ const Chat = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
   const [userReaction, setUserReaction] = useState(null);
   const chatContainerRef = useRef(null);
   const [autoScroll, setAutoScroll] = useState(true);
 
+  useEffect(()=>{
+    console.log(comps);
+    const user = JSON.parse(localStorage.getItem("user"));
+    setAutoTalk(user.settings.automaticTalk.main);
+    setTapTalk(user.settings.tapTalk);
+    setIntervalTime(user.settings.automaticTalk.speed);
+  }, []);
+
   useEffect(() => {
-    fetch(`http://localhost:3000/blurt-interactions/stats/${blurt_id}`)
+    fetch(`hhttps://blurtpfft.vercel.app/blurt-interactions/stats/${blurt_id}`)
       .then(res => res.json())
       .then(data => {
         setLikes(data.likes);
@@ -51,36 +63,84 @@ const Chat = () => {
   }, [blurt_id]);
 
   const handleLike = async (reaction) => {
+    setLiked((prev) =>{
+      setDisliked(false);
+      return !prev;
+    })
     if (userReaction === reaction) reaction = null; 
     try {
-      const res = await fetch(`http://localhost:3000/blurt-interactions/like`, {
+      const res = await fetch(`https://blurtpfft.vercel.app/blurt-interactions/like`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id, blurt_id })
       });
       if (!res.ok) throw new Error("Failed to update reaction");
       const data = await res.json();
-      setLikes(data.likes);
-      setDislikes(data.dislikes);
-      setUserReaction(reaction);
+      setLikes((prev)=>{
+        if(disliked){
+          setDislikes((prev)=>{
+            return prev-1;
+          })
+        }
+        return prev+1;
+      });
     } catch (err) {
       console.error("Error updating reaction:", err);
     }
   };
 
+  const chatSubmit = async (e) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    e.preventDefault();
+    try {
+      const settings = {
+        tapTalk : tapTalk,
+        automaticTalk : {
+          main: autoTalk,
+          speed: intervalTime
+        },
+
+      }
+      user.settings = settings;
+      console.log(user);
+      const response = await fetch("https://blurtpfft.vercel.app/users/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      localStorage.setItem("user", JSON.stringify(user));
+    } catch (error) {
+      console.error("Error saving user data:", error);
+    }
+  };
+
   const handleDislike = async (reaction) => {
+    setDisliked((prev) =>{
+      setLiked(false);
+      return !prev;
+    })
     if (userReaction === reaction) reaction = null; 
     try {
-      const res = await fetch(`http://localhost:3000/blurt-interactions/dislike`, {
+      const res = await fetch(`https://blurtpfft.vercel.app/blurt-interactions/dislike`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id, blurt_id })
       });
       if (!res.ok) throw new Error("Failed to update reaction");
       const data = await res.json();
-      setLikes(data.likes);
-      setDislikes(data.dislikes);
-      setUserReaction(reaction);
+
+      setDislikes((prev)=>{
+        if(liked){
+          setLikes((prev)=>{
+            return prev-1;
+          })
+        }
+        return prev+1;
+      });
     } catch (err) {
       console.error("Error updating reaction:", err);
     }
@@ -133,7 +193,9 @@ const Chat = () => {
 
   return (
     <div className="chat-wrapper" onClick={handleTap}>
-      <button className="settings-button" onClick={() => setShowSettings(!showSettings)}>⚙️</button>
+      <button className="settings-button" style={{backgroundColor:"#f5f5f5"}} onClick={() => setShowSettings(!showSettings)}>
+        <i className="gear fa-solid fa-gear" style={{color:"#1a1a1a", fontSize:"35px"}}></i>
+      </button>
       <div className={`settings-navbar ${showSettings ? 'visible' : ''}`}>
         <label>
           <input type="checkbox" checked={tapTalk} onChange={() => setTapTalk(prev => !prev)} /> TapTalk
@@ -144,6 +206,7 @@ const Chat = () => {
         {autoTalk && (
           <input type="range" min="500" max="5000" step="500" value={intervalTime} onChange={e => setIntervalTime(Number(e.target.value))} />
         )}
+        <button className="submit-feedback" onClick={chatSubmit} type="submit" >save</button>
       </div>
 
       <div id="chat-container" className="chat-container" ref={chatContainerRef}>
@@ -183,10 +246,10 @@ const Chat = () => {
 
       <div className="reaction-buttons">
         <button className={`like-btn ${userReaction === "like" ? "active" : ""}`} onClick={() => handleLike("like")}>
-          👍 {likes}
+          <i className={liked? "fa-solid fa-thumbs-up" : "fa-regular fa-thumbs-up"}></i> <p className="likecount">{likes}</p>
         </button>
         <button className={`dislike-btn ${userReaction === "dislike" ? "active" : ""}`} onClick={() => handleDislike("dislike")}>
-          👎 {dislikes}
+          <i className={disliked? "fa-solid fa-thumbs-down" : "fa-regular fa-thumbs-down"}></i> <p className="likecount">{dislikes}</p>
         </button>
       </div>
 
@@ -195,7 +258,7 @@ const Chat = () => {
           const chatContainer = document.getElementById("chat-container");
           chatContainer.scrollTop = chatContainer.scrollHeight;
           setIsScrolledUp(false);
-        }}>⬇ Scroll to latest</button>
+        }}><i className="fa-solid fa-arrow-down" style={{fontSize:"25px", color: "#1a1a1a"}}></i></button>
       )}
     </div>
   );

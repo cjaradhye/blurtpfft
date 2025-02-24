@@ -15,7 +15,7 @@ router.get("/google/user", async (req, res) => {
 
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    res.json({ _id: user.googleId, name: user.name, nickname: user.nickname, color: user.color });
+    res.json({googleId: user.googleId, name: user.name, nickname: user.nickname, color: user.color });
   } catch (error) {
     res.status(401).json({ message: "Invalid token" });
   }
