@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: process.env.GID,
       clientSecret: process.env.GSECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://blurtpfft.vercel.app/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
