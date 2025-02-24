@@ -30,7 +30,7 @@ export default function Google() {
   
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "https://blurtpfft.vercel.app/auth/google";
   };
 
   return (
