@@ -213,6 +213,7 @@ const Chat = () => {
         {visibleMessages.map((msg, index) => {
           const isLeft = msg.sender === "Kunal" || msg.sender === "Ruhi";
           const isMediator = msg.sender === "Mediator";
+          const isHeading = msg.sender === "Heading";
           const showHeader = index === 0 || visibleMessages[index - 1].sender !== msg.sender;
           const originalMsg = messages.find(m => m.id === msg.replying_to);
           const originalSender = originalMsg ? originalMsg.sender : null;
@@ -221,7 +222,7 @@ const Chat = () => {
             : originalMsg?.message;
 
           return (
-            <div key={msg.id} className={`message-group ${isMediator ? "mediator" : isLeft ? "left" : "right"}`}>
+            <div key={msg.id} className={`message-group ${isHeading? "heading" : isMediator ? "mediator" : isLeft ? "left" : "right"}`}>
               {showHeader && !isMediator && (
                 <div className="message-header">
                   <img src={`/${msg.sender.toLowerCase()}.png`} alt="dp" className="dp" />
