@@ -188,7 +188,7 @@ const Chat = () => {
 
   return (
     <div className="chat-wrapper" onClick={handleTap}>
-      <div className="ainvayi"></div>
+      {/* <div className="ainvayi"></div> */}
       <button className="settings-button" style={{backgroundColor:"#f5f5f5"}} onClick={() => setShowSettings(!showSettings)}>
         <i className="gear fa-solid fa-gear" style={{color:"#1a1a1a", fontSize:"35px"}}></i>
       </button>
