@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./styles/Dashboard.css";
 import Blurt from "./Blurt";
 import Dp from "./Dp";
+import CharacterDashboard from "./TimeThing";
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
@@ -59,16 +60,7 @@ export default function Dashboard() {
         </div>
         <Dp clr={stuff.color} mode={stuff.mode} />
       </div>
-      <div className="blurt-dashboard" style={{ display: logoClick ? "none" : "flex" }}>
-        <div className="people">
-          <div className="dashbox kunalbox"></div>
-          <div className="dashbox bhumikabox"></div>
-        </div>
-        <div className="people">
-          <div className="dashbox ruhibox"></div>
-          <div className="dashbox harshitbox"></div>
-        </div>
-      </div>
+      <CharacterDashboard logoClick={logoClick} />
 
       <div className="blurts" style={{ display: logoClick ? "flex" : "none" }}>
         {blurts.length > 0 ? (
