@@ -217,7 +217,7 @@ const Chat = () => {
             : originalMsg?.message;
 
           return (
-            <div key={msg.id} className={`message-group ${isHeading? "heading" : isMediator ? "mediator" : isLeft ? "left" : "right"}`}>
+            <div key={msg.id} className={`message-group ${isHeading? "chatheading" : isMediator ? "mediator" : isLeft ? "left" : "right"}`}>
               {!isHeading && showHeader && !isMediator && (
                 <div className="message-header">
                   <img src={`/${msg.sender.toLowerCase()}.png`} alt="dp" className="dp" />
@@ -233,7 +233,7 @@ const Chat = () => {
                     </div>
                   </div>
                 )}
-                <p dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></p>
+                <p>dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}</p>
               </div>
             </div>
           );

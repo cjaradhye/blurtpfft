@@ -307,6 +307,20 @@ input[type="checkbox"]:checked::after {
     transition: scroll-top 0.3s ease-in-out;
   }
   
+
+  .chatheading {
+      align-items: center;
+      display: flex;
+      width: 100vw;
+      background: #f5f5f5;
+      margin: 0;
+      text-align: center;
+      font-family: Druk Wide Bold;
+      font-size: 45px;
+      padding: 20px 0;
+      margin-bottom: 20px;
+  }
+
   .scroll-to-bottom {
     font-family: "Graphik Trial";
     position: fixed;
@@ -392,13 +406,17 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
+.message-box p{
+  margin: 0px;
+}
+
 /* Change track color when interacting */
 input[type="range"]:hover {
   background: #aaaaaa;
 }
 
 @media (max-width: 768px) {
-  .heading{
+  .chatheading{
     font-size: 16px;
     padding: 10px 0px;
   }
