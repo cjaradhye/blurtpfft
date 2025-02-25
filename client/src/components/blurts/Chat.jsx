@@ -254,13 +254,13 @@ const Chat = () => {
         </button>
       </div>
 
-      {isScrolledUp && (
+      {/* {isScrolledUp && (
         <button className="scroll-to-bottom" onClick={() => {
           const chatContainer = document.getElementById("chat-container");
           chatContainer.scrollTop = chatContainer.scrollHeight;
           setIsScrolledUp(false);
         }}><i className="fa-solid fa-arrow-down" style={{fontSize:"25px", color: "#1a1a1a"}}></i></button>
-      )}
+      )} */}
     </div>
   );
 };
