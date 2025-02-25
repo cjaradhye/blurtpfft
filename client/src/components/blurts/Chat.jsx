@@ -233,9 +233,7 @@ const Chat = () => {
                     </div>
                   </div>
                 )}
-                <div className="message-box">
-                  <p dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></p>
-                </div>
+                <p dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></p>
               </div>
             </div>
           );
