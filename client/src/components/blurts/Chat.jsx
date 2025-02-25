@@ -223,7 +223,7 @@ const Chat = () => {
 
           return (
             <div key={msg.id} className={`message-group ${isHeading? "heading" : isMediator ? "mediator" : isLeft ? "left" : "right"}`}>
-              {showHeader && !isMediator && (
+              {!isHeading && showHeader && !isMediator && (
                 <div className="message-header">
                   <img src={`/${msg.sender.toLowerCase()}.png`} alt="dp" className="dp" />
                   <span className={`sender-name ${msg.sender.toLowerCase()}chat`}>{msg.sender}</span>
@@ -247,10 +247,12 @@ const Chat = () => {
 
       <div className="reaction-buttons">
         <button className={`like-btn ${userReaction === "like" ? "active" : ""}`} onClick={() => handleLike("like")}>
-          <i className={liked? "fa-solid fa-thumbs-up" : "fa-regular fa-thumbs-up"}></i> <p className="likecount">{likes}</p>
+          <i className={liked? "fa-solid fa-thumbs-up" : "fa-regular fa-thumbs-up"}></i> 
+          {/* <p className="likecount">{likes}</p> */}
         </button>
         <button className={`dislike-btn ${userReaction === "dislike" ? "active" : ""}`} onClick={() => handleDislike("dislike")}>
-          <i className={disliked? "fa-solid fa-thumbs-down" : "fa-regular fa-thumbs-down"}></i> <p className="likecount">{dislikes}</p>
+          <i className={disliked? "fa-solid fa-thumbs-down" : "fa-regular fa-thumbs-down"}></i>
+           {/* <p className="likecount">{dislikes}</p> */}
         </button>
       </div>
 

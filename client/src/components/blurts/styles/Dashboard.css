@@ -1,8 +1,6 @@
-
-
 .blurt-main {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -10,7 +8,6 @@
 }
 
 .blurt-dashboard{
-
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -151,7 +148,7 @@
   }
   .dashbox{
     width: 90vw;
-    height: calc(25vh - 100px);
+    height: calc(20vh);
     min-height: 210px;
   }
   .blurt-header{

@@ -398,7 +398,21 @@ input[type="range"]:hover {
 }
 
 @media (max-width: 768px) {
+  .heading{
+    font-size: 16px;
+    padding: 10px 0px;
+  }
   .left{
-    margin-left: 20px;
+    margin-left: 2px;
+  }
+  .right{
+    margin-right: 2px;
+  }
+  .reaction-buttons button{
+    font-size: 30px;
+  }
+  .reaction-buttons p{
+    right: 10px;
+    bottom: 70px;
   }
 }

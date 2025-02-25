@@ -2,7 +2,7 @@ import "./Style.css";
 
 function Style(props){
     return(
-        <div className="style-pic">
+        <div className="style-pic" style={{backgroundColor: !props.mode? "#1a1a1a" : "#f5f5f5"}}>
             <div className="style-text">
                 <h4>{props.subtitle}</h4>
                 <h1>{props.title}</h1>

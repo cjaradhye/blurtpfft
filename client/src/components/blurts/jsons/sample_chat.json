@@ -115,5 +115,90 @@
   { "id": 88, "replying_to": null, "sender": "Kunal", "message": "Or perhaps we'll just waste another six months of our lives talking in circles." },
   { "id": 89, "replying_to": null, "sender": "Mediator", "message": "That, Mr. Kunal, is entirely up to you. The committee has given you an opportunity. An opportunity to demonstrate…civic responsibility.  Or, shall we say, an opportunity to avoid further… escalation." },
   { "id": 90, "replying_to": null, "sender": "Ruhi", "message": "Escalation? What kind of escalation?" },
-  { "id": 91, "replying_to": null, "sender": "Mediator", "message": "Let's talk about that fire alarm" }
+  { "id": 91, "replying_to": null, "sender": "Mediator", "message": "Let's talk about that fire alarm" },
+  { "id": 299, "replying_to": null, "sender": "Heading", "message": "OUTSIDE" },
+  {
+    "id": 300,
+    "replying_to": null,
+    "sender": "Ruhi",
+    "message": "So, what now? Six months of this… charade?"
+  },
+  {
+    "id": 301,
+    "replying_to": null,
+    "sender": "Harshit",
+    "message": "Worse. Six months of trying to figure out who unplugged that damn camera."
+  },
+  {
+    "id": 302,
+    "replying_to": null,
+    "sender": "Kunal",
+    "message": "ugh"
+  },
+  {
+    "id": 303,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "Yeah hey..sorry had to take that call.."
+  },
+  {
+    "id": 304,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "Did you...guys see the news? About the stampede in Delhi?"
+  },
+  {
+    "id": 305,
+    "replying_to": null,
+    "sender": "Ruhi",
+    "message": "Stampede? No, what happened?"
+  },
+  {
+    "id": 306,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "At the railway station. Something about the Kumbh Mela. People got confused about the trains, I...think. It was overcrowded…" 
+  },
+  {
+    "id": 307,
+    "replying_to": null,
+    "sender": "Harshit",
+    "message": "Oh god, that's awful. Were there… were there injuries?"
+  },
+  {
+    "id": 308,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "lots."
+  },
+  {
+    "id": 309,
+    "replying_to": null,
+    "sender": "Kunal",
+    "message": "That's… terrible.  Poor people." 
+  },
+  {
+    "id": 310,
+    "replying_to": null,
+    "sender": "Ruhi",
+    "message": "It's just… chaos. Like what happened here, but… worse. much worse."
+  },
+  {
+    "id": 312,
+    "replying_to": null,
+    "sender": "Harshit",
+    "message": "Yeah, but this…this was an accident. A stupid, pointless accident. That stampede… that's a real tragedy."
+  },
+  {
+    "id": 313,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "yeah..."
+  },
+  {
+    "id": 314,
+    "replying_to": null,
+    "sender": "Bhumika",
+    "message": "my aunt was there. She's okay, but… she saw it happen." 
+  }
 ]

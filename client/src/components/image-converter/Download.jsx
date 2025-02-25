@@ -6,7 +6,8 @@ const DownloadButton = (comps) => {
     const [attributes, setAttributes] = useState({
         title: comps.title,
         subtitle: comps.subtitle,
-        color: comps.color
+        color: comps.color,
+        mode: comps.mode
     });
 
     const handleDownload = () => {
