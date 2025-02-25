@@ -18,6 +18,7 @@ import EditAvatar from "./components/blurts/EditAvatar";
 import ToImage from "./components/image-converter/ToImage";
 import Style from "./components/image-converter/Style";
 import DownloadButton from "./components/image-converter/Download";
+import NewPrivate from "./components/NewProtected";
 
 
 const App = () => (
@@ -68,9 +69,11 @@ const App = () => (
       <Route
         path="/blurt/thefirst"
         element={
-          <div className="chatthingy">
-            <Chat />
-          </div>
+          <NewPrivate>
+            <div className="chatthingy">
+              <Chat />
+            </div>
+          </NewPrivate>
         }
       />
       <Route
@@ -84,7 +87,9 @@ const App = () => (
       <Route
         path="/blurt/main"
         element={
+          <NewPrivate>
             <Dashboard />
+          </NewPrivate>
         }
       />
       <Route
@@ -112,6 +117,12 @@ const App = () => (
                 <DownloadButton />
                 <Style />
             </div>
+          }
+        />
+        <Route
+          path="/blurt/login"
+          element={
+            <Google />
           }
         />
       </Routes>
