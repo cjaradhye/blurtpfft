@@ -41,14 +41,13 @@ const Chat = () => {
 
   useEffect(()=>{
     console.log(comps);
-    const user = JSON.parse(localStorage.getItem("user"));
-    setAutoTalk(user.settings.automaticTalk.main);
-    setTapTalk(user.settings.tapTalk);
-    setIntervalTime(user.settings.automaticTalk.speed);
+    const user = JSON.parse(localStorage.getItem("user")) || {};
+    const settings = user.settings || {};
+    const automaticTalk = settings.automaticTalk || { main: false, speed: 1000 };    
   }, []);
 
   useEffect(() => {
-    fetch(`hhttps://blurtpfft.vercel.app/blurt-interactions/stats/${blurt_id}`)
+    fetch(`https://blurtpfft.vercel.app/blurt-interactions/stats/${blurt_id}`)
       .then(res => res.json())
       .then(data => {
         setLikes(data.likes);
@@ -86,33 +85,33 @@ const Chat = () => {
   };
 
   const chatSubmit = async (e) => {
-    const user = JSON.parse(localStorage.getItem("user"));
     e.preventDefault();
+  
+    const updatedSettings = {
+      tapTalk,
+      automaticTalk: {
+        main: autoTalk ?? false, // Default to false if undefined
+        speed: intervalTime ?? 1000, // Default speed
+      },
+    };
+  
+    user.settings = updatedSettings;
+  
     try {
-      const settings = {
-        tapTalk : tapTalk,
-        automaticTalk : {
-          main: autoTalk,
-          speed: intervalTime
-        },
-
-      }
-      user.settings = settings;
-      console.log(user);
       const response = await fetch("https://blurtpfft.vercel.app/users/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
+        body: JSON.stringify({ user_id, settings: updatedSettings }),
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+  
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+  
       localStorage.setItem("user", JSON.stringify(user));
     } catch (error) {
       console.error("Error saving user data:", error);
     }
   };
+  
 
   const handleDislike = async (reaction) => {
     setDisliked((prev) =>{
@@ -234,7 +233,9 @@ const Chat = () => {
                     </div>
                   </div>
                 )}
-                <span dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></span>
+                <div className="message-box">
+                  <p dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></p>
+                </div>
               </div>
             </div>
           );
