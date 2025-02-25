@@ -6,17 +6,15 @@ import Dp from "./Dp";
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [logoClick, setLogoClick] = useState(false);
-  const [stuff, setStuff] = useState({});
+  const [stuff, setStuff] = useState(null); // Initialize as null
   const [blurts, setBlurts] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        console.log("Fetching data for:");
         const response = await fetch(`https://blurtpfft.vercel.app/blurts/`);
         if (response.ok) {
           const get_blurts = await response.json();
-          console.log("User Data:", get_blurts);
           setBlurts(get_blurts || []);
         }
       } catch (error) {
@@ -28,20 +26,24 @@ export default function Dashboard() {
 
     fetchUserData();
 
-    const user = JSON.parse(localStorage.getItem("user") || "{}");
-    if (user) setStuff(user);
-    console.log(user);
-    
+    const user = localStorage.getItem("user");
+    if (user) {
+      setStuff(JSON.parse(user));
+    } else {
+      setStuff({ mode: false, color: "#000", _id: null }); // Default values
+    }
+
+    setLoading(false);
   }, []);
 
   function handleLogoClick() {
     setLogoClick((prev) => !prev);
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading || !stuff) return <p>Loading...</p>; // Prevents rendering when stuff is null
 
   return (
-    <div className="blurt-main" style={{ backgroundColor: stuff?.mode ? "#F5f5f5" : "#1a1a1a" }}>
+    <div className="blurt-main" style={{ backgroundColor: stuff.mode ? "#F5f5f5" : "#1a1a1a" }}>
       <div className="filler"></div>
       <div className="blurt-header">
         <div className="blurtbutton-container">
@@ -55,7 +57,7 @@ export default function Dashboard() {
             <img className="logo-button" src="/blurt.png" alt="Blurt Logo" />
           </div>
         </div>
-        <Dp clr={stuff?.color} mode={stuff?.mode} />
+        <Dp clr={stuff.color} mode={stuff.mode} />
       </div>
       <div className="blurt-dashboard" style={{ display: logoClick ? "none" : "flex" }}>
         <div className="people">
@@ -67,19 +69,23 @@ export default function Dashboard() {
           <div className="dashbox harshitbox"></div>
         </div>
       </div>
-      
+
       <div className="blurts" style={{ display: logoClick ? "flex" : "none" }}>
-        {blurts.map((a, index) => (
-          <Blurt
-            key={a._id || index}
-            user_id={stuff?._id}
-            mode={stuff?.mode}
-            heading={a.blurt_name}
-            content={a.content}
-            date={a.createdAt}
-            link={a.link}
-          />
-        ))}
+        {blurts.length > 0 ? (
+          blurts.map((a, index) => (
+            <Blurt
+              key={index}
+              user_id={stuff._id}
+              mode={stuff.mode}
+              heading={a.blurt_name}
+              content={a.content}
+              date={a.createdAt}
+              link={a.link}
+            />
+          ))
+        ) : (
+          <p>No blurts available</p>
+        )}
       </div>
     </div>
   );

@@ -14,12 +14,14 @@ const Settings = (comps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(user);
-    setTapTalk(user.settings.tapTalk);
-    setAutoTalk(user.settings.automaticTalk.main);
-    setIntervalTime(user.settings.automaticTalk.speed);
-    setName(user.nickname);
+    if (user) {
+      setTapTalk(user.settings?.tapTalk || false);
+      setAutoTalk(user.settings?.automaticTalk?.main || false);
+      setIntervalTime(user.settings?.automaticTalk?.speed || 1000);
+      setName(user.nickname || "");
+    }
   }, []);
+  
 
   const handleAvatar = async (e) => {
     navigate("/blurt/edit-avatar");
