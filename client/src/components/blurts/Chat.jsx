@@ -233,7 +233,7 @@ const Chat = () => {
                     </div>
                   </div>
                 )}
-                <p>dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}</p>
+                <span dangerouslySetInnerHTML={{ __html: formatMessage(msg.message) }}></span>
               </div>
             </div>
           );
