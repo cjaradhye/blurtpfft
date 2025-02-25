@@ -151,16 +151,6 @@
     /* width: 100%; */
   }
   
-  .left {
-    align-items: flex-start;
-    margin-left: 20px;
-  }
-  
-  .right {
-    align-items: flex-end;
-    margin-right: 20px;
-  }
-  
   .mediator {
     margin: 0px;
     align-items: center;
@@ -406,3 +396,9 @@ input[type="range"]:hover {
   background: #aaaaaa;
 }
 
+@media (max-width: 768px) {
+  .left{
+    margin-left: 20px;
+  }
+
+}
