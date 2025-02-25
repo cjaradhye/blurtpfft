@@ -1,8 +1,18 @@
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewPrivate({ children }) {
+  console.log("here");
+  const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
-  return token ? children : <Navigate to="/blurt/login" />;
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/blurt/login");
+    }
+  }, [token, navigate]);
+
+  return token ? children : null;
 }
 
-export default PrivateRoute;
+export default NewPrivate;

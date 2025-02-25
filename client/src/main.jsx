@@ -19,6 +19,7 @@ import ToImage from "./components/image-converter/ToImage";
 import Style from "./components/image-converter/Style";
 import DownloadButton from "./components/image-converter/Download";
 import NewPrivate from "./components/NewProtected";
+import Google from "./components/GoogleFull";
 
 
 const App = () => (
@@ -69,27 +70,22 @@ const App = () => (
       <Route
         path="/blurt/thefirst"
         element={
-          <NewPrivate>
+
             <div className="chatthingy">
               <Chat />
             </div>
-          </NewPrivate>
         }
       />
       <Route
         path="/trying"
         element={
-            <PrivateRoute>
             <AfterLogin />
-            </PrivateRoute>
         }
       />
       <Route
         path="/blurt/main"
         element={
-          <NewPrivate>
             <Dashboard />
-          </NewPrivate>
         }
       />
       <Route

@@ -3,10 +3,6 @@ import { useLocation } from "react-router-dom";
 import "./styles/Chat.css";
 import messages from './jsons/sample_chat.json';
 
-// const userState = {
-//   user_id : "67b73da2bc45eca3079056be",
-//   blurt_id: "thefirst"
-// }
 const getColorForSender = (sender) => {
   const colors = {
     Kunal: "#FF5E5B",
