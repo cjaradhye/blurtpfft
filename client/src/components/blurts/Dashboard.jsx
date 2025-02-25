@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [logoClick, setLogoClick] = useState(false);
   const [stuff, setStuff] = useState({});
-  const [blurts, setBlurts] = useState([])
+  const [blurts, setBlurts] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -27,11 +27,11 @@ export default function Dashboard() {
     };
 
     fetchUserData();
-    const user = JSON.parse(localStorage.getItem("user"));
-    setStuff(user);
+
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    if (user) setStuff(user);
     console.log(user);
-    setLoading(false);
-    // localStorage.setItem("user", JSON.stringify(user));
+    
   }, []);
 
   function handleLogoClick() {
@@ -41,7 +41,7 @@ export default function Dashboard() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="blurt-main" style={{backgroundColor: stuff.mode? "#F5f5f5" : "#1a1a1a"}}>
+    <div className="blurt-main" style={{ backgroundColor: stuff?.mode ? "#F5f5f5" : "#1a1a1a" }}>
       <div className="filler"></div>
       <div className="blurt-header">
         <div className="blurtbutton-container">
@@ -49,15 +49,13 @@ export default function Dashboard() {
             className="blurtbutton"
             onClick={handleLogoClick}
             style={{
-              boxShadow: logoClick
-                ? "0px 2px 1px 2px rgba(0, 0, 0, 0.25) inset"
-                : "none",
+              boxShadow: logoClick ? "0px 2px 1px 2px rgba(0, 0, 0, 0.25) inset" : "none",
             }}
           >
             <img className="logo-button" src="/blurt.png" alt="Blurt Logo" />
           </div>
         </div>
-        <Dp clr={stuff.color} mode={stuff.mode} />
+        <Dp clr={stuff?.color} mode={stuff?.mode} />
       </div>
       <div className="blurt-dashboard" style={{ display: logoClick ? "none" : "flex" }}>
         <div className="people">
@@ -73,8 +71,9 @@ export default function Dashboard() {
       <div className="blurts" style={{ display: logoClick ? "flex" : "none" }}>
         {blurts.map((a, index) => (
           <Blurt
-            user_id={stuff._id}
-            mode={stuff.mode}
+            key={a._id || index}
+            user_id={stuff?._id}
+            mode={stuff?.mode}
             heading={a.blurt_name}
             content={a.content}
             date={a.createdAt}
