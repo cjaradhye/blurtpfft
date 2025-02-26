@@ -60,7 +60,7 @@ const App = () => (
         }
       />
       <Route
-        path="/unsubscribe"
+        path="/blurt/unsubscribe"
         element={
           <>
             <Unsubscribe />
