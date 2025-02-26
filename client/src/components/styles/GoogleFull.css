@@ -9,6 +9,18 @@
     gap: 30px;
 }
 
+.mailzero{
+    font-family: "Graphik Trial";
+    font-size: 17px;
+    text-decoration: none;
+    color: #1a1a1a;
+    margin-bottom: -20px;
+}
+
+.mailzero:hover{
+    text-decoration: underline;
+}
+
 .mailone, .mailthree{
     font-family: "Graphik Trial";
     font-size: 28px;
@@ -101,6 +113,9 @@
 }
 
 @media (max-width: 768px){
+    .mailzero{
+        font-size: 9.375px;
+    }
     .fullmailpage{
         height: 100vh;
     }

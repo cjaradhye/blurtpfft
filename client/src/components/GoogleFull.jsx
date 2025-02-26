@@ -36,6 +36,7 @@ export default function Google() {
 
   return (
     <div className="fullmailpage">
+
       <h1 className="mailone">
         curious? <br /> well, blurt is a click away
       </h1>
@@ -46,6 +47,7 @@ export default function Google() {
 
       <p className="mailthree">already knows everything about you.</p>
       <p className="mailfour">might as well use it</p>
+      <a href="/blurt" className="mailzero">go to main page</a>
     </div>
   );
 }
