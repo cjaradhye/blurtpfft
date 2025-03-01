@@ -13,8 +13,8 @@ export default function Google() {
       localStorage.setItem("authToken", token);
       window.history.replaceState(null, "", window.location.pathname);
   
-      // fetch("https://blurtpfft.vercel.app/auth/google/user", {
-      fetch("http://localhost:3000/auth/google/user", {
+      fetch("https://blurtpfft.vercel.app/auth/google/user", {
+      // fetch("http://localhost:3000/auth/google/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -30,8 +30,8 @@ export default function Google() {
   }, []); // Fix: Added empty array
 
   const handleGoogleLogin = () => {
-    // window.location.href = "https://blurtpfft.vercel.app/auth/google";
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "https://blurtpfft.vercel.app/auth/google";
+    // window.location.href = "http://localhost:3000/auth/google";
   };
 
   return (
