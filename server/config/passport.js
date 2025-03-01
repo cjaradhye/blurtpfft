@@ -8,7 +8,8 @@ passport.use(
     {
       clientID: process.env.GID,
       clientSecret: process.env.GSECRET,
-      callbackURL: "https://blurtpfft.vercel.app/auth/google/callback",
+      // callbackURL: "https://blurtpfft.vercel.app/auth/google/callback",
+      callbackURL: "http://localhost:3000/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -48,7 +49,5 @@ passport.deserializeUser(async (id, done) => {
     done(error, null);
   }
 });
-
-
 
 module.exports = passport;

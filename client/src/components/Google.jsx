@@ -7,12 +7,14 @@ export default function Google() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("token");
+    console.log(token);
   
     if (token) {
       localStorage.setItem("authToken", token);
       window.history.replaceState(null, "", window.location.pathname);
   
-      fetch("https://blurtpfft.vercel.app/auth/google/user", {
+      // fetch("https://blurtpfft.vercel.app/auth/google/user", {
+      fetch("http://localhost:3000/auth/google/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -26,11 +28,10 @@ export default function Google() {
         .catch((error) => console.error("Error fetching user info:", error));
     }
   }, []); // Fix: Added empty array
-  
-  
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://blurtpfft.vercel.app/auth/google";
+    // window.location.href = "https://blurtpfft.vercel.app/auth/google";
+    window.location.href = "http://localhost:3000/auth/google";
   };
 
   return (

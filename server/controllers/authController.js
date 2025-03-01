@@ -7,8 +7,11 @@ exports.googleCallback = async (req, res) => {
     const token = jwt.sign({ googleId: user.googleId, _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
-
+    console.log("iefbvhbfhbfvhbfdhb");
+    // res.redirect(`http://localhost:5173/blurt?token=${token}`);
     res.redirect(`https://nahneedpfft.com/blurt?token=${token}`);
+
+    
   } catch (error) {
     res.redirect("/login");
   }
