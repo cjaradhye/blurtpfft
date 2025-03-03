@@ -7,7 +7,7 @@ const isEmbeddedBrowser = () => {
 
 const Embedded = ({ url }) => {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(url).then(() => {
+    navigator.clipboard.writeText("https://nahneedpfft.com/blurt").then(() => {
       alert("Link copied! Open in your browser.");
     });
   };
@@ -38,7 +38,7 @@ const MainComponent = () => {
     return <Embedded url={url} />;
   }
 
-  return <div>Your actual content goes here</div>;
+  return <div></div>;
 };
 
 export default MainComponent;
