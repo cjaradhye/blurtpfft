@@ -46,6 +46,7 @@ export default function Dashboard() {
   return (
     <div className="blurt-main" style={{ backgroundColor: stuff.mode ? "#F5f5f5" : "#1a1a1a" }}>
       <div className="filler"></div>
+      
       <div className="blurt-header">
         <div className="blurtbutton-container">
           <div
@@ -60,6 +61,7 @@ export default function Dashboard() {
         </div>
         <Dp clr={stuff.color} mode={stuff.mode} />
       </div>
+      
       <CharacterDashboard logoClick={logoClick} />
 
       <div className="blurts" style={{ display: logoClick ? "flex" : "none" }}>
@@ -73,6 +75,7 @@ export default function Dashboard() {
               content={a.content}
               date={a.createdAt}
               link={a.link}
+              intro={a.newsSources}
             />
           ))
         ) : (

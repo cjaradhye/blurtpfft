@@ -244,11 +244,11 @@ const Chat = () => {
       <div className="reaction-buttons">
         <button className={`like-btn ${userReaction === "like" ? "active" : ""}`} onClick={() => handleLike("like")}>
           <i className={liked? "fa-solid fa-thumbs-up" : "fa-regular fa-thumbs-up"}></i> 
-          {(likes) && ( <p className="likecount">{likes}</p>)}
+          {/* <p className="likecount">{likes}</p> */}
         </button>
         <button className={`dislike-btn ${userReaction === "dislike" ? "active" : ""}`} onClick={() => handleDislike("dislike")}>
           <i className={disliked? "fa-solid fa-thumbs-down" : "fa-regular fa-thumbs-down"}></i>
-           {(dislikes>0) && (<p className="likecount">{dislikes}</p>)}
+           {/* <p className="likecount">{dislikes}</p> */}
         </button>
       </div>
 

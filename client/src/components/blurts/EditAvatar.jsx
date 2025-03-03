@@ -16,9 +16,10 @@ function EditAvatar() {
   const [googleId, setGoogleId] = useState("");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"));
+  
   
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
     console.log("User: ", user);
     if (user && user._id) {
       setGoogleId(user.googleId);
