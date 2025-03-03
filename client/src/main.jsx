@@ -20,7 +20,7 @@ import Style from "./components/image-converter/Style";
 import DownloadButton from "./components/image-converter/Download";
 import NewPrivate from "./components/NewProtected";
 import Google from "./components/GoogleFull";
-
+import ChatNew from "./components/blurts/ChatNew";
 
 const App = () => (
   <BrowserRouter>
@@ -73,6 +73,15 @@ const App = () => (
 
             <div className="chatthingy">
               <Chat />
+            </div>
+        }
+      />
+      <Route
+        path="/blurt/thesecond"
+        element={
+
+            <div className="chatthingy">
+              <ChatNew />
             </div>
         }
       />

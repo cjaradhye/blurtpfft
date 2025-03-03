@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./styles/Chat.css";
-import messages from './jsons/sample_chat.json';
+import messages from './jsons/thesecondthesecon.json';
 
 const getColorForSender = (sender) => {
   const colors = {
@@ -20,7 +20,7 @@ const formatMessage = (text) => {
     .replace(/\*(.*?)\*/g, "<i>$1</i>");
 };
 
-const Chat = () => {
+const ChatNew = () => {
   const location = useLocation();
   const comps = location.state;
   const { user_id, blurt_id } = comps; 
@@ -77,7 +77,7 @@ const Chat = () => {
             return prev-1;
           })
         }
-        return liked? prev+1 : prev-1;
+        return prev+1;
       });
     } catch (err) {
       console.error("Error updating reaction:", err);
@@ -86,10 +86,6 @@ const Chat = () => {
 
   const chatSubmit = async (e) => {
     e.preventDefault();
-    setShowSettings((prev) => {
-      console.log(!prev);
-      return !prev;
-    });
   
     const updatedSettings = {
       tapTalk,
@@ -267,4 +263,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default ChatNew;
