@@ -134,6 +134,7 @@
   align-items: center;
   justify-content: space-between; /* Keeps Blurt button centered and DP at the edge */
   padding: 0 20px;
+  z-index: 20;
 }
 .blurtbutton-container {
   margin-right: -50px;
