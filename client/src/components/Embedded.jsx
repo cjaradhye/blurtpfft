@@ -7,7 +7,7 @@ const isEmbeddedBrowser = () => {
 
 const Embedded = ({ url }) => {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText("https://nahneedpfft.com/blurt").then(() => {
+    navigator.clipboard.writeText("url").then(() => {
       alert("Link copied! Open in your browser.");
     });
   };
