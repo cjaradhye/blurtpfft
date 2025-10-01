@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const passport = require("./config/passport"); // Passport setup
+const passport = require("./server/config/passport"); // Passport setup
 const cors = require("cors");
-require("dotenv").config();
+require("dotenv").config({ path: "./server/.env" });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -49,16 +49,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ✅ Routes
-app.use("/", require("./routes/indexRoutes"));
-app.use("/auth", require("./routes/authRoutes"));
-app.use("/dashboard", require("./routes/dashboardRoutes"));
-app.use("/email", require("./routes/emailRoutes"));
-app.use("/feedback", require("./routes/feedbackRoutes"));
-app.use("/unsubscribe", require("./routes/unsubscribeRoutes"));
-app.use("/stuff", require("./routes/stuffRoutes"));
-app.use("/users", require("./routes/userRoutes"));
-app.use("/blurts", require("./routes/blurtRoutes"));
-app.use("/blurt-interactions", require("./routes/blurtInteractionRoutes"));
+app.use("/", require("./server/routes/indexRoutes"));
+app.use("/auth", require("./server/routes/authRoutes"));
+app.use("/dashboard", require("./server/routes/dashboardRoutes"));
+app.use("/email", require("./server/routes/emailRoutes"));
+app.use("/feedback", require("./server/routes/feedbackRoutes"));
+app.use("/unsubscribe", require("./server/routes/unsubscribeRoutes"));
+app.use("/stuff", require("./server/routes/stuffRoutes"));
+app.use("/users", require("./server/routes/userRoutes"));
+app.use("/blurts", require("./server/routes/blurtRoutes"));
+app.use("/blurt-interactions", require("./server/routes/blurtInteractionRoutes"));
 
 // ✅ Handle Preflight Requests (Fixes OPTIONS request failures)
 app.options("*", (req, res) => {
