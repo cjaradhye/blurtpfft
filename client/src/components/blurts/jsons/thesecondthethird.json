@@ -1,0 +1,303 @@
+[
+    {
+      "id": 1,
+      "replying_to": null,
+      "sender": "Ruhi",
+      "message": "WELCOME TO THE FIGHT CLUB. Rule #1: No boring takes. Rule #2: If your argument is weak, we clown you. Rule #3: Kunal is not allowed to run away mid-fight. 👀 Rule #4: Whoever unplugs the camera loses next week's debate rights."
+    },
+    {
+      "id": 2,
+      "replying_to": 1,
+      "sender": "Kunal",
+      "message": "Excuse me?? I do NOT run away. I strategically exit. Very different. Also, can we stop bringing up the camera thing? We've had enough mandatory mediation sessions for that."
+    },
+    {
+      "id": 3,
+      "replying_to": 2,
+      "sender": "Ruhi",
+      "message": "Says the guy who *strategically exited* during my housing crisis presentation last week."
+    },
+    {
+      "id": 4,
+      "replying_to": 3,
+      "sender": "Bhumika",
+      "message": "Seriously, Ruhi? Not everyone processes by debating everything to death like you do. Some of us are just... tired."
+    },
+    {
+      "id": 5,
+      "replying_to": null,
+      "sender": "Mr. Rao",
+      "message": "Let's channel that energy productively. Today's topic: Bengaluru. BJP leaders want ₹15,000 crore for development. They say the city pays high taxes but doesn't get enough funds back. Thoughts?"
+    },
+    {
+      "id": 6,
+      "replying_to": 5,
+      "sender": "Bhumika",
+      "message": "Finally! Have you seen the potholes? My scooter goes through more ups and downs than my love life. Yesterday I nearly crashed into a tech bro because I had to swerve around a hole the size of my future."
+    },
+    {
+      "id": 7,
+      "replying_to": 6,
+      "sender": "Harshit",
+      "message": "*adjusts glasses* You think money fixes everything? Without proper planning, ₹15,000 crore is just 15,000 crore ways to waste money. Remember when they \"fixed\" Koramangala? Three months later, same potholes, different excuses."
+    },
+    {
+      "id": 8,
+      "replying_to": 7,
+      "sender": "Ruhi",
+      "message": "OR they could just build flying cars and solve everything. 🚀 *mimics Harshit's voice* \"Actually, the aerodynamic properties of flying cars would be inefficient in Bengaluru's atmospheric conditions...\""
+    },
+    {
+      "id": 9,
+      "replying_to": 8,
+      "sender": "Kunal",
+      "message": "*stares at his phone* Yes, Ruhi, because flying cars will appear before they fix one broken traffic signal. 🙄 My aunt's been waiting three years for street lights on her road. Three. Years."
+    },
+    {
+      "id": 10,
+      "replying_to": null,
+      "sender": "Mr. Rao",
+      "message": "Let’s focus. BJP leaders also complained about bad roads, traffic, and Metro fares. Do you think Bengaluru is being ignored, despite being India's tech capital?"
+    },
+    {
+      "id": 11,
+      "replying_to": 10,
+      "sender": "Bhumika",
+      "message": "*leans forward* Obviously. The city literally runs on tech money, but our roads are an extreme sport. My father's construction firm got a contract six years ago to repair a bridge, but the funds mysteriously \"disappeared.\" This isn't just inefficiency—it's systematic neglect."
+    },
+    {
+      "id": 12,
+      "replying_to": 11,
+      "sender": "Harshit",
+      "message": "Every city wants more money. Show me proof that Bengaluru is actually getting less than it deserves. *scrolls through tablet* The data on tax collection versus allocation shows—"
+    },
+    {
+      "id": 13,
+      "replying_to": 12,
+      "sender": "Ruhi",
+      "message": "Boring! Just give me smooth roads so I stop riding my scooter like I'm in a Fast & Furious chase scene. Last week I hit a pothole so hard my soul briefly left my body."
+    },
+    {
+      "id": 14,
+      "replying_to": 13,
+      "sender": "Kunal",
+      "message": "*finally looks up from phone* Ruhi's right. Can we focus on actual problems instead of playing government gossip? Not all of us live in your fancy Indiranagar bubble, Mr. Rao. Some of us deal with these failures daily."
+    },
+    {
+      "id": 15,
+      "replying_to": 14,
+      "sender": "Bhumika",
+      "message": "*eyes flashing* Kunal, THIS is the actual problem! If people don't push, the government ignores them! Remember what happened when your building's residents stayed quiet about the safety violations? The committee only acted after the incident."
+    },
+    {
+      "id": 16,
+      "replying_to": 15,
+      "sender": "Kunal",
+      "message": "*shifts uncomfortably* Low blow, Bhumika."
+    },
+    {
+      "id": 17,
+      "replying_to": 16,
+      "sender": "Harshit",
+      "message": "*dismissively* Wrong. You can push all you want, but bad planning wastes money. That's worse than no money at all. It's like buying expensive ingredients but having no idea how to cook."
+    },
+    {
+      "id": 18,
+      "replying_to": 17,
+      "sender": "Ruhi",
+      "message": "What if we made a reality show where politicians fix one problem a week? If they fail, we vote them out. Instant accountability! I'd call it \"Pothole or Politician: Which One Goes?\""
+    },
+    {
+      "id": 19,
+      "replying_to": 18,
+      "sender": "Mr. Rao",
+      "message": "*smiles* Not a bad idea. But back to reality—what do you all think about lowering Metro fares? Would that help with Bengaluru's traffic?"
+    },
+    {
+      "id": 20,
+      "replying_to": 19,
+      "sender": "Bhumika",
+      "message": "Lower fares = more people using Metro = less traffic. It's not rocket science. My cousin in Delhi pays half what we do for three times the distance."
+    },
+    {
+      "id": 21,
+      "replying_to": 20,
+      "sender": "Harshit",
+      "message": "*sighs* If fares go too low, the Metro loses money. Then what? More taxes? More budget cuts? You're treating symptoms, not the disease."
+    },
+    {
+      "id": 22,
+      "replying_to": 21,
+      "sender": "Ruhi",
+      "message": "Then billionaires can donate! Imagine: 'This Metro ride is sponsored by Mukesh Ambani.' 😂 \"Please hold the handrails, brought to you by Reliance.\""
+    },
+    {
+      "id": 23,
+      "replying_to": 22,
+      "sender": "Kunal",
+      "message": "If Ambani's name is on it, I want reclining seats and popcorn machines too. And maybe stations that don't flood every monsoon."
+    },
+    {
+      "id": 24,
+      "replying_to": 23,
+      "sender": "Mr. Rao",
+      "message": "Since we're already talking about government responsibility, let's pivot. Have you all been following what's happening in Manipur?"
+    },
+    {
+      "id": 25,
+      "replying_to": 24,
+      "sender": "Ruhi",
+      "message": "*groans* Oh no, I sense a 'Harshit Explains Geopolitics' moment coming."
+    },
+    {
+      "id": 26,
+      "replying_to": 25,
+      "sender": "Harshit",
+      "message": "*ignoring Ruhi* The situation in Manipur is serious. Ethnic clashes, internet shutdowns, and the government’s response—or lack of one—has people worried. It's been months, and things aren’t exactly stabilizing."
+    },
+    {
+      "id": 27,
+      "replying_to": 26,
+      "sender": "Bhumika",
+      "message": "Exactly. And it’s barely in the news anymore. When it first happened, everyone was talking about it. Now? Just silence. The media moves on, but people are still suffering."
+    },
+    {
+      "id": 28,
+      "replying_to": 27,
+      "sender": "Kunal",
+      "message": "Wait, but what’s actually happening? Last I heard, there were protests and some internet bans, but I haven't followed it closely."
+    },
+    {
+      "id": 29,
+      "replying_to": 28,
+      "sender": "Ruhi",
+      "message": "*gasp* Kunal admitting he doesn’t know something? This is historic."
+    },
+    {
+      "id": 30,
+      "replying_to": 29,
+      "sender": "Harshit",
+      "message": "*ignoring Ruhi again* Short version: Manipur has multiple ethnic groups, mainly the Meiteis and the Kukis. There have been long-standing tensions over land, jobs, and political representation. A recent court order on Scheduled Tribe status triggered violence, and things escalated fast."
+    },
+    {
+      "id": 31,
+      "replying_to": 30,
+      "sender": "Kunal",
+      "message": "*nods slowly* So it's not just random riots—there’s history behind it."
+    },
+    {
+      "id": 32,
+      "replying_to": 31,
+      "sender": "Bhumika",
+      "message": "Exactly. And now people are displaced, homes have been burned, and the government is struggling to control the situation. But what really gets me is how little people care once the headlines disappear."
+    },
+    {
+      "id": 33,
+      "replying_to": 32,
+      "sender": "Ruhi",
+      "message": "Welcome to the internet, where tragedies have a 48-hour expiration date."
+    },
+    {
+      "id": 34,
+      "replying_to": 33,
+      "sender": "Harshit",
+      "message": "It’s more than that. It’s about what the media prioritizes. Certain issues get nonstop coverage, while others fade out fast. If people don’t keep the pressure up, nothing changes."
+    },
+    {
+      "id": 35,
+      "replying_to": 34,
+      "sender": "Mr. Rao",
+      "message": "That’s an interesting point. So, do you all think the media controls public interest, or does public interest control the media?"
+    },
+    {
+      "id": 36,
+      "replying_to": 35,
+      "sender": "Kunal",
+      "message": "Oh, easy. The media controls us. Look at election season. They decide what’s a scandal and what’s not."
+    },
+    {
+      "id": 37,
+      "replying_to": 36,
+      "sender": "Ruhi",
+      "message": "No, no, no. People have short attention spans. The media just feeds them what they already want—drama, entertainment, easy headlines."
+    },
+    {
+      "id": 38,
+      "replying_to": 37,
+      "sender": "Bhumika",
+      "message": "But we’re still responsible, right? If we really cared, we’d demand better coverage. The question is—do we actually care, or do we just like *acting* like we care online?"
+    },
+    {
+      "id": 39,
+      "replying_to": 38,
+      "sender": "Harshit",
+      "message": "*smirks* If outrage was currency, Twitter users would be billionaires."
+    },
+    {
+      "id": 40,
+      "replying_to": 39,
+      "sender": "Ruhi",
+      "message": "*gasps* Did Harshit just make a joke?? Mark this day."
+    },
+    {
+      "id": 41,
+      "replying_to": 40,
+      "sender": "Kunal",
+      "message": "Hold on. Let’s say we all miraculously started caring more. What changes? The media still has sponsors, political interests, and its own biases."
+    },
+    {
+      "id": 42,
+      "replying_to": 41,
+      "sender": "Mr. Rao",
+      "message": "That’s exactly what we should be thinking about. Can the media ever truly be neutral? Or is bias unavoidable?"
+    },
+    {
+      "id": 43,
+      "replying_to": 42,
+      "sender": "Bhumika",
+      "message": "I think bias is natural, but transparency isn’t. If news channels admitted their biases instead of pretending to be neutral, it would be easier to trust them."
+    },
+    {
+      "id": 44,
+      "replying_to": 43,
+      "sender": "Ruhi",
+      "message": "Oh, so like sports commentary? ‘And today’s headlines are brought to you by our unapologetically left-wing panelist, Bhumika, and our cold, data-driven robot, Harshit!’"
+    },
+    {
+      "id": 45,
+      "replying_to": 44,
+      "sender": "Harshit",
+      "message": "*ignoring Ruhi for the third time* But that won’t work if people only watch news that agrees with them. That just creates echo chambers."
+    },
+    {
+      "id": 46,
+      "replying_to": 45,
+      "sender": "Kunal",
+      "message": "*shrugs* Then maybe the real issue isn’t the media. Maybe it’s us. If we only want easy, one-sided stories, why blame the news for giving us what we demand?"
+    },
+    {
+      "id": 47,
+      "replying_to": 46,
+      "sender": "Ruhi",
+      "message": "Great. So we’ve just discovered that *we* are the problem. Love that for us."
+    },
+    {
+      "id": 48,
+      "replying_to": 47,
+      "sender": "Mr. Rao",
+      "message": "*chuckles* I think that’s a good place to pause. Your assignment: Find a recent news story, compare how different sources covered it, and tell me—who shaped the narrative more? The media or the audience?"
+    },
+    {
+      "id": 49,
+      "replying_to": 48,
+      "sender": "Bhumika",
+      "message": "*muttering* Ah yes, more proof that nothing is real and everything is manipulated."
+    },
+    {
+      "id": 50,
+      "replying_to": 49,
+      "sender": "Ruhi",
+      "message": "On that note—who’s up for coffee? I need caffeine to recover from this existential crisis."
+    }
+  ]
+  

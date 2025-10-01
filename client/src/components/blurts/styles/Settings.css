@@ -1,0 +1,125 @@
+.mainsettings-navbar {
+  /* color: #1a1a1a; */
+  overflow-x: hidden;
+  font-family: "Druk Wide Bold";
+  font-size: 15px;
+  position: fixed;
+  width: 300px;
+  height: 350px;
+  overflow-y: scroll;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: white; */
+  /* padding-top: 20px; */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+.mainsettings-navbar.visible {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.settings-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dpbutton{
+  background-color: #1a1a1a;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+}
+
+.settings-section{
+  font-family: "Graphik Trial";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  width: 150px;
+}
+
+.heythere{
+  font-family: "Graphik Trial";
+  font-size: 15px;
+}
+
+.settings-line{
+  width: 300px;
+  overflow: hidden;
+}
+
+.linktochange{
+  font-size: 9.375px;
+  font-family: "Graphik Trial";
+}
+
+.linktochange:hover{
+  text-decoration:underline;
+}
+
+.feedback-ques{
+  text-align: center;
+  font-family: "Graphik Trial";
+  font-size: 15px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.submit-feedback{
+  width: 50px;
+  font-size: 9.375px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  margin: 15px auto 0px;
+}
+
+.settings-footer{
+  height: 350px;
+  width: 300px;
+  background-color: #1a1a1a;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.nahneedlogosettings{
+  width: 250px;
+}
+
+.blurtlogosettings{
+  width: 75px;
+}
+
+.style-in-settings{
+  margin-top: -20px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.downloadbutton{
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px 0px;
+  width: 100px;
+}
+
+.logout{
+  margin: 5px auto;
+  margin-bottom: -5px;
+  font-family: "Graphik Trial";
+  background-color: #ff2f2f;
+  color: white;
+  border: none;
+  width: 100px;
+}
