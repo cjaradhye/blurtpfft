@@ -1,12 +1,5 @@
 # Environment variables
 .env
-server/.env
-client/.env
 
 # Dependencies
-/server/node_modules
-/client/node_modules
-
-# Build files
-/client/dist
-/client/build
+/node_modules
